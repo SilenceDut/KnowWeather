@@ -25,6 +25,7 @@ A concise and nice weather app
  * Thinker的接入
  * 微信小程序
  
+ 
  问题交流QQ群：292976661
  
 #支持开发者
