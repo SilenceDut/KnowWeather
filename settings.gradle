@@ -1,0 +1,27 @@
+def initLocalGradleEnvironment(){
+
+    Properties properties = new Properties()
+
+    File propertyFile = new File(rootDir.getAbsolutePath()+ "/local.properties")
+    properties.load(propertyFile.newDataInputStream())
+
+    gradle.ext.sdkDir =properties.getProperty('sdk.dir')
+    gradle.ext.ndkDir =properties.getProperty('ndk.dir')
+    gradle.ext.localDir =properties.getProperty('local.dir')
+
+    gradle.ext.debugKeystore= properties.getProperty('debug.keystore')
+}
+
+def initVersion() {
+    gradle.ext.compileSdkVersion = 23
+    gradle.ext.buildToolsVersion = '23.0.2'
+    gradle.ext.minSdkVersion = 14
+    gradle.ext.supportVersion = '23.2.1'
+    gradle.ext.versionCode = 10
+    gradle.ext.versionName = '1.0.0'
+}
+//初始化
+initLocalGradleEnvironment()
+initVersion()
+
+include ':app'

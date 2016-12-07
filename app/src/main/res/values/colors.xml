@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00BCD4</color>
+    <color name="colorPrimaryDark">#00BCD4</color>
+    <color name="colorAccent">#3FC1C9</color>
+
+    <color name="transparent">#00ffffff</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="main_background">#FFFFFF</color>
+    <color name="dark_background">#f5f5f5</color>
+
+    <!--material design guide color -->
+    <color name="dividers_black">#1C000000</color>
+    <color name="disable_or_hint_black">#42000000</color>
+    <color name="secondly_text_or_icon_black">#8A000000</color>
+    <color name="main_text_black">#DE000000</color>
+
+    <color name="dividers_white">#1Cffffff</color>
+    <color name="disable_or_hint_white">#4Cffffff</color>
+    <color name="secondly_text_white">#ABffffff</color>
+    <color name="main_text_white">#fff</color>
+
+    <color name="share_color">#33475f</color>
+
+    <color name="gray">#8c8c8c</color>
+    <color name="gray_deep">#5c5c5c</color>
+    <color name="alpha_gray">#CC646464</color>
+    <color name="theme_gray">#646464</color>
+
+    <color name="green500">#259b24</color>
+    <color name="yellow500">#FDD835</color>
+    <color name="orange500">#ff9800</color>
+    <color name="red400">#ef5350</color>
+    <color name="red500">#e51c23</color>
+    <color name="purple500">#9c27b0</color>
+    <color name="red900">#b71c1c</color>
+</resources>

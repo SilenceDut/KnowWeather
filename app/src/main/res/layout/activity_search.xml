@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:fitsSystemWindows ="true"
+    >
+
+    <include
+        android:id="@+id/search_top_bar"
+        layout="@layout/view_search"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/search_top_bar"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <com.silencedut.knowweather.common.customview.SideLetterBar
+        android:layout_below="@+id/search_top_bar"
+        android:id="@+id/side"
+        android:layout_width="@dimen/side_letter_bar_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:id="@+id/tv_letter_overlay"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/overlay_bg"
+        android:textSize="@dimen/text_size_big"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_result_view"
+        android:background="@color/main_background"
+        android:layout_below="@+id/search_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <include
+        layout="@layout/view_no_result"
+        />
+
+</RelativeLayout>

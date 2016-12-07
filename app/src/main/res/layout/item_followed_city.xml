@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/common_dimen_tiny"
+    android:layout_height="120dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
+    <View
+        android:id="@+id/hover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/disable_or_hint_white"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/city_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/common_dimen_huge"
+            android:paddingLeft="@dimen/common_dimen"
+            android:gravity="center"
+            android:textColor="@color/main_text_white"
+            android:textSize="@dimen/text_size_big"
+            android:textAppearance="@style/TextAppearance.RobotoThinPath"
+            />
+
+        <TextView
+            android:id="@+id/city_status"
+            android:layout_below="@+id/city_temp"
+            android:drawablePadding="@dimen/common_dimen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/main_text_white"
+            />
+
+        <TextView
+            android:id="@+id/city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:drawablePadding="@dimen/common_dimen_tiny"
+            android:layout_alignParentRight="true"
+            android:textSize="@dimen/text_size_small"
+            android:padding="@dimen/common_dimen_small"
+            android:textColor="@color/main_text_white"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:padding="@dimen/common_dimen_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checked"
+        android:visibility="gone"
+        android:src="@mipmap/checked"
+        />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_gravity="right"
+        android:padding="@dimen/common_dimen_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:src="@mipmap/trash"
+        />
+
+
+</FrameLayout>

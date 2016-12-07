@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/life_index_content"
+    android:background="?selectableItemBackground"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/common_dimen_big"
+    android:gravity="center"
+    >
+    <ImageView
+        android:id="@+id/life_index_icon"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@mipmap/sport_mode"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/life_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/secondly_text_or_icon_black"
+        />
+
+    <TextView
+        android:id="@+id/life_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</LinearLayout>

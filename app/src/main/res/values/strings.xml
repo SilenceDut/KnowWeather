@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">知天气</string>
+    <string name="slogan">天气尽在"掌握"之中！</string>
+
+    <string name="refreshing">正在更新…</string>
+    <string name="refresh_fail">更新失败!</string>
+    <string name="refresh_succeed">更新成功!</string>
+
+    <string name="post">%1$s发布</string>
+
+    <string name="share_success">分享成功</string>
+    <string name="share_fail">抱歉,分享失败</string>
+    <string name="share_weather">分享天气</string>
+    <string name="share_app">分享应用</string>
+    <string name="future_weather">未来天气</string>
+    <string name="aqi_guide" translatable="false">空气质量指数(AQI)</string>
+    <string name="lifeIndexes">生活指数</string>
+
+    <string name="city_guide_info">单击城市卡片选择默认城市,\n长按进行编辑</string>
+
+    <string name="known">我知道了</string>
+    <string name="tip_not_show">不再提示</string>
+
+    <string name="select_city">选择城市</string>
+    <string name="hot_city">热门城市</string>
+    <string name="located_city">定位城市</string>
+    <string name="search_city">搜索城市</string>
+    <string name="hint_search_box">输入城市名或拼音</string>
+    <string name="nothing_found">没有搜索结果~</string>
+    <string name="locating">正在定位…</string>
+    <string name="located_failed">定位失败</string>
+    <string name="add_city_hand_mode">定位失败,请手动添加城市</string>
+
+    <string name="notification">通知</string>
+    <string name="notification_show">显示通知栏</string>
+    <string name="notification_theme">通知栏皮肤</string>
+    <string name="alarm_allow">气象灾害预警</string>
+    <string name="update_allow">自动更新天气</string>
+    <string name="update_schedule">0.5小时</string>
+
+    <string name="follow_system">跟随系统</string>
+    <string name="pure_white">优雅纯白</string>
+    
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+
+    <string name="about">关于</string>
+    <string name="contact">联系</string>
+    <string name="update_app">检查更新</string>
+
+    <string name="thanks">感谢你的支持</string>
+
+    <string name="explain">为保证『知天气』的简洁，未加入任何广告，你可以通过微信付款来支持开发者继续优化应用，
+        金额大小根据你的心情。\n\n可以用微信直接扫描二维码，也可以长按二维码分享给自己，然后识别二维码支付。\n\n感谢你的支持！</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:title="联系"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/common_dimen_huge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            style="@style/SettingTextStyle"
+            android:drawableLeft="@mipmap/github"
+            android:drawablePadding="@dimen/common_dimen"
+            android:text="SilenceDut"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            style="@style/SettingTextStyle"
+            android:drawableLeft="@mipmap/contact_qq"
+            android:drawablePadding="@dimen/common_dimen"
+            android:text="3026354251"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            style="@style/SettingTextStyle"
+            android:drawableLeft="@mipmap/email"
+            android:drawablePadding="@dimen/common_dimen"
+            android:text="silencedutchman@foxmail.com"
+            />
+
+    </LinearLayout>
+</LinearLayout>

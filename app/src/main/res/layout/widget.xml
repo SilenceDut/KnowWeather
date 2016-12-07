@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_container"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_dimen_small">
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_widget"
+        android:layout_centerVertical="true"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="14°"/>
+
+    <LinearLayout
+        android:paddingLeft="@dimen/common_dimen_big"
+        android:layout_toRightOf="@id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingTop="@dimen/common_dimen_tiny"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:text="朝阳区"
+            />
+        <TextView
+            android:layout_marginTop="@dimen/common_dimen_min"
+            android:id="@+id/weather_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:text="多云"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/status_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/weather_rain"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/common_dimen_big"
+        />
+
+</RelativeLayout>

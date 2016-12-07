@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.silencedut.expandablelayout.ExpandableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/expandable_layout"
+    app:expWithParentScroll="true"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_background"
+    >
+
+    <LinearLayout
+        android:id="@+id/base_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="true"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/common_dimen_big"
+            android:layout_marginBottom="@dimen/common_dimen_big"
+            android:layout_marginLeft="@dimen/common_dimen"
+            android:layout_marginRight="@dimen/common_dimen"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            >
+
+            <com.silencedut.knowweather.common.customview.LevelView
+                android:id="@+id/aqi_view"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                />
+
+            <TextView
+                android:id="@+id/rank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_small"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/date_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/common_dimen"
+            android:layout_marginRight="@dimen/common_dimen"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:id="@+id/aqi_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_big"
+                />
+
+            <TextView
+                android:id="@+id/aqi_quality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/expand_icon"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="@dimen/common_dimen_big"
+            android:layout_marginBottom="@dimen/common_dimen_big"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@mipmap/expand"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/common_dimen"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <com.silencedut.knowweather.common.customview.LevelView
+                android:id="@+id/pm2.5_view"
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+               />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/common_dimen"
+                android:paddingRight="@dimen/common_dimen"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                >
+                <TextView
+                    android:id="@+id/pm2_5_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_big_title"
+                    android:textColor="@color/colorAccent"
+                    android:text="45"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5 μg/m³"
+                    android:textSize="@dimen/text_size_small"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_dimen"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.silencedut.knowweather.common.customview.LevelView
+                android:id="@+id/pm10_view"
+                android:layout_gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/common_dimen"
+                android:paddingRight="@dimen/common_dimen"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/pm10_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_big_title"
+                    android:textColor="@color/colorAccent"
+                    android:text="60"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM10 μg/m³"
+                    android:textSize="@dimen/text_size_small"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/aqi_advice"
+            android:layout_marginTop="@dimen/common_dimen_big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="气象条件对空气污染物稀释、扩散和清除无明显影响，易感人群应适当减少室外活动时间。"
+            android:textColor="@color/secondly_text_or_icon_black"
+            android:textSize="@dimen/text_size_small"
+            />
+
+    </LinearLayout>
+</com.silencedut.expandablelayout.ExpandableLayout>

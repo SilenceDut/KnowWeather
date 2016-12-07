@@ -1,0 +1,39 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="notification_bar_height">72dp</dimen>
+
+    <dimen name="common_location_size">14dp</dimen>
+    <dimen name="common_icon_size_small">16dp</dimen>
+    <dimen name="common_icon_size">24dp</dimen>
+    <dimen name="common_icon_size_big">36dp</dimen>
+    <dimen name="common_dimen_min">2dp</dimen>
+    <dimen name="common_dimen_tiny">4dp</dimen>
+    <dimen name="common_dimen_small">6dp</dimen>
+    <dimen name="common_dimen">10dp</dimen>
+    <dimen name="common_dimen_mid">12dp</dimen>
+    <dimen name="common_dimen_big">16dp</dimen>
+    <dimen name="common_dimen_huge">20dp</dimen>
+    <dimen name="float_button_margin">16dp</dimen>
+
+    <dimen name="side_letter_bar_width">36dp</dimen>
+    <dimen name="search_icon_padding">12dp</dimen>
+    <dimen name="search_view_text_padding">65dp</dimen>
+
+    <dimen name="setting_text_height">48dp</dimen>
+
+    <dimen name="divider_height">1px</dimen>
+
+    <dimen name="text_size_tiny">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_default">14sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_appbar_title">20sp</dimen>
+    <dimen name="text_size_big_title">24sp</dimen>
+    <dimen name="text_size_big">34sp</dimen>
+    <dimen name="text_size_huge">45sp</dimen>
+    <dimen name="text_size_widget">50sp</dimen>
+    <dimen name="text_size_main_special">80sp</dimen>
+</resources>

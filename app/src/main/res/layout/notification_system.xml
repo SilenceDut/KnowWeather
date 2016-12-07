@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:padding="@dimen/common_dimen"
+    android:id="@+id/notification_container"
+    >
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="@dimen/common_icon_size_big"
+        android:layout_height="@dimen/common_icon_size_big"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/common_dimen_huge"
+        android:src="@mipmap/weather_rain"
+        />
+
+    <LinearLayout
+        android:layout_toRightOf="@id/weather_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        >
+
+        <TextView
+            android:id="@+id/weather_temp"
+            android:text="15°"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_white"
+            android:textSize="@dimen/text_size_big_title"
+            />
+
+        <TextView
+            android:layout_marginTop="@dimen/common_dimen_min"
+            android:id="@+id/weather_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/main_text_white"
+            android:text="多云"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="RelativeOverlap"
+        android:layout_marginTop="@dimen/common_dimen_min"
+        android:textColor="@color/main_text_white"
+        />
+
+    <TextView
+        android:id="@+id/post_time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/main_text_white"
+        android:textSize="@dimen/text_size_small"
+        tools:ignore="RelativeOverlap"/>
+
+</RelativeLayout>

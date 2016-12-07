@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#fff"
+        android:backgroundTint="#10000000"
+        tools:targetApi="lollipop"/>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/icon"/>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:src="@mipmap/name"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/mark"
+            style="@style/SettingTextStyle"
+            android:text="给个好评"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            android:id="@+id/suggestion"
+            style="@style/SettingTextStyle"
+            android:text="问题反馈"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:background="@color/dividers_black"/>
+
+        <LinearLayout
+            android:id="@+id/update_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/new_version"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/setting_text_height"
+                android:gravity="center"
+                android:padding="@dimen/common_dimen_big"
+                android:text="检查新版本"
+                />
+
+            <ImageView
+                android:id="@+id/new_version_tip"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@mipmap/remind"
+                android:layout_marginLeft="-10dp"
+                android:visibility="gone"
+
+                />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_dimen"
+            android:background="@color/dark_background"
+            />
+
+        <TextView
+            android:id="@+id/pay"
+            style="@style/SettingTextStyle"
+            android:drawableLeft="@mipmap/pay"
+            android:drawablePadding="@dimen/common_dimen"
+            android:text="支持开发者"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/common_dimen_huge"
+        android:layout_marginTop="@dimen/common_dimen_huge"
+        android:gravity="bottom"
+        android:text="Version "
+        android:textColor="@color/main_text_black"
+        />
+
+</LinearLayout>

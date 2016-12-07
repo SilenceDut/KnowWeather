@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_background"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/common_dimen_big"
+        android:background="@color/main_background"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/theme_switch"
+            style="@style/SettingTextStyle"
+            android:paddingRight="0dp"
+            android:text="@string/notification_show"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_below="@id/theme_switch"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            android:id="@+id/notification_choose"
+            style="@style/SettingTextStyle"
+            android:layout_below="@id/theme_switch"
+            android:text="@string/notification_theme"
+            />
+
+        <TextView
+            android:id="@+id/notification_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/setting_text_height"
+            android:layout_below="@id/theme_switch"
+            android:layout_toLeftOf="@+id/more"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/text_size_small"
+            />
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="@dimen/common_icon_size_small"
+            android:layout_height="@dimen/setting_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/theme_switch"
+            android:layout_marginRight="@dimen/common_dimen_mid"
+            android:src="@mipmap/more"
+            />
+
+        <View
+            android:id="@+id/background_holder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_dimen_big"
+            android:layout_below="@id/more"
+            android:background="@color/dark_background"
+            android:visibility="gone"
+            />
+
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/alarm_switch"
+            style="@style/SettingTextStyle"
+            android:layout_below="@id/background_holder"
+            android:text="@string/alarm_allow"
+            android:visibility="gone"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_height"
+            android:layout_below="@id/alarm_switch"
+            android:background="@color/dividers_black"/>
+
+        <TextView
+            android:id="@+id/update_allow"
+            style="@style/SettingTextStyle"
+            android:layout_below="@id/alarm_switch"
+            android:text="@string/update_allow"
+            />
+
+        <TextView
+            android:id="@+id/update_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/setting_text_height"
+            android:layout_below="@id/alarm_switch"
+            android:layout_toLeftOf="@+id/schedule_more"
+            android:gravity="center_vertical"
+            android:text="@string/update_schedule"
+            android:textSize="@dimen/text_size_small"
+            />
+
+        <ImageView
+            android:id="@+id/schedule_more"
+            android:layout_width="@dimen/common_icon_size_small"
+            android:layout_height="@dimen/setting_text_height"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/alarm_switch"
+            android:layout_marginRight="@dimen/common_dimen_mid"
+            android:src="@mipmap/more"
+            />
+
+        <View
+            android:id="@+id/background_holder2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_dimen_big"
+            android:layout_below="@id/schedule_more"
+            android:background="@color/dark_background"
+            />
+
+        <TextView
+            android:id="@+id/about"
+            style="@style/SettingTextStyle"
+            android:layout_below="@id/background_holder2"
+            android:text="@string/about"
+            />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

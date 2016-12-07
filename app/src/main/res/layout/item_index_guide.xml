@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/common_dimen"
+    android:background="@color/main_background"
+    android:gravity="center_vertical">
+
+    <View
+        android:layout_width="3dp"
+        android:layout_height="16dp"
+        android:background="@drawable/bg_guide"
+        android:layout_marginLeft="@dimen/common_dimen_tiny"
+        android:layout_marginRight="@dimen/common_dimen_small"
+        />
+
+    <TextView
+        android:id="@+id/guide_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/main_background"
+        android:text="@string/aqi_guide"
+        android:textSize="@dimen/text_size_medium"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        />
+</LinearLayout>

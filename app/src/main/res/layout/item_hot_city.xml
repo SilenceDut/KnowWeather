@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/common_dimen_small"
+    android:background="@color/dark_background">
+
+    <TextView
+        android:id="@+id/tv_hot_city_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/gray_deep"/>
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/share_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingTop="@dimen/common_dimen_big"
+    android:paddingBottom="@dimen/common_dimen_big"
+    >
+
+    <ImageView
+        android:id="@+id/share_icon"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:src="@mipmap/moments"
+        android:scaleType="centerInside"
+        android:layout_gravity="center"
+
+        />
+
+    <TextView
+        android:id="@+id/share_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送给微信好友"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_small"
+        android:layout_marginTop="@dimen/common_dimen_small"
+        android:textColor="@color/share_color"
+        />
+
+</LinearLayout>

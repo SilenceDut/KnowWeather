@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/common_dimen"
+    tools:ignore="RtlHardcoded">
+
+    <TextView
+        style="@style/LetterIndexTextViewStyle"
+        android:text="@string/located_city"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_dimen_big"
+        android:background="@color/dark_background">
+
+        <LinearLayout
+            android:id="@+id/location_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:gravity="center"
+            android:background="?selectableItemBackground">
+
+            <ImageView
+                style="@style/CommonIconImageSmall"
+                android:src="@mipmap/location_dark"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_located_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/locating"
+                android:textSize="16sp"
+                android:textColor="@color/gray_deep"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        style="@style/LetterIndexTextViewStyle"
+        android:layout_marginTop="@dimen/common_dimen_small"
+        android:text="@string/hot_city"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/common_dimen"
+        android:paddingRight="@dimen/side_letter_bar_width"
+        android:paddingBottom="@dimen/common_dimen"
+       />
+</LinearLayout>

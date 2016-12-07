@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notification_theme_key">
+        <item>@string/follow_system</item>
+        <item>@string/pure_white</item>
+    </string-array>
+
+    <string-array name="schedule">
+        <item>0.5小时</item>
+        <item>1小时</item>
+        <item>3小时</item>
+        <item>不自动更新</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/splash_fl"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    >
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/splash"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        />
+
+    <ImageView
+        android:layout_marginTop="80dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/slogan"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/common_dimen_huge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/icon"
+            />
+        <ImageView
+            android:layout_marginLeft="@dimen/common_dimen_tiny"
+            android:layout_width="80dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/name"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>
