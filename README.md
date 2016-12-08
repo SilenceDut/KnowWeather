@@ -1,6 +1,8 @@
 # KnowWeather
 A concise and nice weather app 
 
+建议先下载应用【[应用宝](http://sj.qq.com/myapp/detail.htm?apkName=com.silencedut.knowweather)，或[腾讯bugly分发平台](https://beta.bugly.qq.com/knowweather)】体验下，以免浪费你的时间O(∩_∩)O~~。
+
 #效果图
 ![](http://ww2.sinaimg.cn/large/006y8lVagw1faiecmxxx2j312w0dwtci.jpg)
 
@@ -24,7 +26,6 @@ A concise and nice weather app
  * 升级接口，提供更多的信息（湿度等）
  * Thinker的接入
  * 微信小程序
- 
  
  问题交流QQ群：292976661
  
