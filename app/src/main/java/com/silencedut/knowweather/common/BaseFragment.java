@@ -32,6 +32,7 @@ public abstract class BaseFragment extends Fragment implements UIInit {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Router.getInstance().register(this);
+        initBeforeView();
     }
 
     @Override
@@ -50,7 +51,6 @@ public abstract class BaseFragment extends Fragment implements UIInit {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(getContentViewId(), container, false);
         ButterKnife.bind(this, rootView);
-        initBeforeView();
         initViews();
         return rootView;
     }

@@ -18,7 +18,7 @@ def initVersion() {
     gradle.ext.minSdkVersion = 14
     gradle.ext.supportVersion = '23.2.1'
     gradle.ext.versionCode = 10
-    gradle.ext.versionName = '1.0.0'
+    gradle.ext.versionName = '1.1.0'
 }
 //初始化
 initLocalGradleEnvironment()

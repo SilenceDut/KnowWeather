@@ -59,13 +59,13 @@ public class WeatherApplication extends Application {
 
     private void initCrashReport() {
         Beta.autoInit = true;
-        Beta.autoCheckUpgrade = false;
+        Beta.autoCheckUpgrade = true;
         Beta.initDelay = 3 * 1000;
         Beta.largeIconId = R.mipmap.icon;
         Beta.smallIconId = R.mipmap.icon;
         Beta.defaultBannerId = R.mipmap.icon;
         Beta.storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        Bugly.init(getApplicationContext(), APP_ID, false);
+        Bugly.init(getApplicationContext(), APP_ID, BuildConfig.DEBUG);
 
     }
 
