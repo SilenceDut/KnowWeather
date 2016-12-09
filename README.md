@@ -28,19 +28,6 @@ A concise and nice weather app
  * 微信小程序
  
  问题交流QQ群：292976661
- 
-#支持开发者
-
-自己在维护服务器，用的是最低的配置，可以支持升级下服务器配置。
-
-**10.24**
-
-![](http://ww3.sinaimg.cn/large/006y8lVagw1faibkfd0hhj308c0a40tc.jpg)
-
-**随意金额**
-
-![](http://ww4.sinaimg.cn/large/006y8lVagw1faibkwsmxjj308c087aan.jpg)
-
 
 # License
 
