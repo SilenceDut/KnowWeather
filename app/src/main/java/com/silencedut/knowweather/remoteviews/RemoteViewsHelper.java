@@ -13,7 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
-import android.support.v7.app.NotificationCompat;
+import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
 import com.silencedut.knowweather.ModelManager;
@@ -95,7 +95,20 @@ public class RemoteViewsHelper {
     @TargetApi(16)
     private static Notification generateCustomNotification(Context context) {
 
-        Notification notification = new NotificationCompat.Builder(context).setSmallIcon(R.mipmap.icon).setContent(getNotificationContentView(context)).setPriority(NotificationCompat.PRIORITY_MAX).setOngoing(true).build();
+        NotificationCompat.Builder
+                builder =  new NotificationCompat
+                .Builder(context)
+                .setContent(getNotificationContentView(context))
+                .setPriority(NotificationCompat.PRIORITY_MAX).setOngoing(true);
+
+        if (Version.buildVersion() >= Build.VERSION_CODES.LOLLIPOP) {
+            builder.setSmallIcon(R.mipmap.small_icon);
+        } else {
+            builder.setSmallIcon(R.mipmap.icon);
+        }
+
+
+        Notification notification = builder.build();
         //wrap_content fit
         if (Version.buildVersion() >= Build.VERSION_CODES.JELLY_BEAN) {
             notification.bigContentView = getNotificationContentView(context);
@@ -127,6 +140,7 @@ public class RemoteViewsHelper {
         remoteViews.setTextViewText(R.id.city, basic.getCity());
         remoteViews.setTextViewText(R.id.post_time, TimeUtil.getHourMinute() + " 更新");
         remoteViews.setImageViewResource(R.id.weather_icon, Constants.getIconId(basic.getWeather()));
+
 
         Intent updateIntent = new Intent(WeatherWidgetProvider.UPDATE_ACTION);
         context.sendBroadcast(updateIntent);
