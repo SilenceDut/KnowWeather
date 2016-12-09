@@ -17,7 +17,7 @@ def initVersion() {
     gradle.ext.buildToolsVersion = '23.0.2'
     gradle.ext.minSdkVersion = 14
     gradle.ext.supportVersion = '23.2.1'
-    gradle.ext.versionCode = 10
+    gradle.ext.versionCode = 13
     gradle.ext.versionName = '1.1.0'
 }
 //初始化

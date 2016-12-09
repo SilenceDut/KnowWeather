@@ -90,7 +90,7 @@ public class CityModel extends BaseModel {
                             }
                             Router.getInstance().getReceiver(ModelCallback.LocationResult.class).onLocationComplete(locationCityId, aMapLocation.getErrorCode() == 0);
                         }
-                    });
+                    },false);
                 }
             }
         });
