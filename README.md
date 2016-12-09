@@ -4,7 +4,7 @@ A concise and nice weather app
 建议先下载应用【[应用宝](http://sj.qq.com/myapp/detail.htm?apkName=com.silencedut.knowweather)，或[腾讯bugly分发平台](https://beta.bugly.qq.com/knowweather)】体验下，以免浪费你的时间O(∩_∩)O~~。
 
 #效果图
-
+录屏软件导致图像模糊，应用实际效果更好
 
 ![](http://ww1.sinaimg.cn/large/006y8lVagw1fakfzarjvng30c60kphdw.gif)
 
