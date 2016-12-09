@@ -90,7 +90,7 @@
 
     <style name="SettingTextStyle">
         <item name="android:clickable">true</item>
-        <item name="android:padding">@dimen/common_dimen_big</item>
+        <item name="android:padding">@dimen/common_dimen_mid</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/setting_text_height</item>
         <item name="android:background">?selectableItemBackground</item>
