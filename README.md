@@ -4,15 +4,13 @@ A concise and nice weather app
 建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
 
 #效果图
-录屏软件导致图像模糊，应用实际效果更好
-
-![](http://ww1.sinaimg.cn/large/006y8lVagw1fakfzarjvng30c60kphdw.gif)
-
 ![](http://ww2.sinaimg.cn/large/006y8lVagw1faiecmxxx2j312w0dwtci.jpg)
 
 #整体框架
 
 [根据实际项目浅谈Android项目中的框架搭建](https://silencedut.github.io/2016/12/05/根据实际项目浅谈Android项目中的框架搭建/)
+
+![](http://ww1.sinaimg.cn/large/006y8lVagw1fapabmcpijj30u00i3go3.jpg)
 
 #关于
 [知天气——天气尽在掌握之中](https://silencedut.github.io/2016/12/06/知天气——天气尽在掌握之中/)
