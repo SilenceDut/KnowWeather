@@ -1,7 +1,7 @@
 # KnowWeather
 A concise and nice weather app 
 
-建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
+建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
 
 #效果图
 录屏软件导致图像模糊，应用实际效果更好
