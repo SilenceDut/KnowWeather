@@ -42,7 +42,7 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
             }
 
             WeatherEntity.BasicEntity basic = weatherEntity.getBasic();
-            remoteViews.setTextViewText(R.id.temp, basic.getTemp());
+            remoteViews.setTextViewText(R.id.temp,basic.getTemp());
             remoteViews.setTextViewText(R.id.weather_status, basic.getWeather());
             remoteViews.setTextViewText(R.id.city, basic.getCity());
             remoteViews.setImageViewResource(R.id.status_icon, Constants.getIconId(basic.getWeather()));
@@ -67,7 +67,7 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
         }
 
         WeatherEntity.BasicEntity basic = weatherEntity.getBasic();
-        remoteViews.setTextViewText(R.id.temp, basic.getTemp());
+        remoteViews.setTextViewText(R.id.temp,basic.getTemp());
         remoteViews.setTextViewText(R.id.weather_status, basic.getWeather());
         remoteViews.setTextViewText(R.id.city, basic.getCity());
         remoteViews.setImageViewResource(R.id.status_icon, Constants.getIconId(basic.getWeather()));

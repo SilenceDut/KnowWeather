@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -341,5 +342,10 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
         mActionRotate.removeAllListeners();
         mSucceedAnimator.removeAllUpdateListeners();
         mActionRotate.removeAllUpdateListeners();
+    }
+
+    @Override
+    public Context getContext() {
+        return this;
     }
 }

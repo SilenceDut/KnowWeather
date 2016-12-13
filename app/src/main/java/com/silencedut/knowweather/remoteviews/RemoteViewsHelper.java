@@ -121,7 +121,7 @@ public class RemoteViewsHelper {
 
     private static RemoteViews getNotificationContentView(Context context) {
         WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
-        int themeId = Constants.getNotificationThemeId(PreferencesUtil.get(Constants.NOTIFICATION_THEME, 0));
+        int themeId = Constants.getNotificationThemeId(PreferencesUtil.get(Constants.NOTIFICATION_THEME, 1));
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), themeId);
 

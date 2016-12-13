@@ -29,7 +29,7 @@ android {
         variant.outputs.each { output ->
             output.outputFile = new File(
                     output.outputFile.parent,
-                    "knowweather-${variant.versionName}.apk".toLowerCase())
+                    "knowweather.apk".toLowerCase())
         }
     }
 }

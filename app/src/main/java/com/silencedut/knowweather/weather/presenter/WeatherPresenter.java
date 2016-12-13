@@ -2,6 +2,7 @@ package com.silencedut.knowweather.weather.presenter;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.widget.Toast;
@@ -47,8 +48,15 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
             @Override
             public void run() {
                 if (Build.VERSION.SDK_INT >= 23) {
+
                     String[] mPermissionList = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.READ_LOGS, Manifest.permission.READ_PHONE_STATE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.SET_DEBUG_APP, Manifest.permission.SYSTEM_ALERT_WINDOW, Manifest.permission.GET_ACCOUNTS, Manifest.permission.WRITE_APN_SETTINGS};
-                    ActivityCompat.requestPermissions((Activity) mainView, mPermissionList, 123);
+
+                    for(String permission:mPermissionList) {
+                        if (ActivityCompat.checkSelfPermission(mMainView.getContext(),permission)!= PackageManager.PERMISSION_GRANTED){
+                            ActivityCompat.requestPermissions((Activity) mMainView.getContext(), new String[]{permission},1);
+                        }
+                    }
+
                 }
             }
         });
@@ -59,7 +67,7 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
     public void onLocationComplete(String locationId, boolean success) {
         if (!success && mCityModel.noDefaultCity()) {
             Toast.makeText(getContext(), R.string.add_city_hand_mode, Toast.LENGTH_LONG).show();
-            SearchActivity.navigationFromApplication(getContext());
+            SearchActivity.navigationActivity(mMainView.getContext());
             return;
         }
 
@@ -79,15 +87,13 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
     }
 
 
-    public void getWeather(final String cityId) {
+    private void getWeather(final String cityId) {
         mMainView.onRefreshing(true);
         mWeatherModel.updateWeather(cityId);
     }
 
     public void updateDefaultWeather() {
-        if (mCityModel.noDefaultCity()) {
-            return;
-        }
+
         String defaultCity = mCityModel.getDefaultId();
         getWeather(defaultCity);
     }

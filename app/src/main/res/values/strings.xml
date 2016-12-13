@@ -18,6 +18,8 @@
 
     <string name="city_guide_info">单击城市卡片选择默认城市,\n长按进行编辑</string>
 
+    <string name="follow_system_warn">在一些系统上，跟随系统色或许会出现显示问题</string>
+
     <string name="known">我知道了</string>
     <string name="tip_not_show">不再提示</string>
 

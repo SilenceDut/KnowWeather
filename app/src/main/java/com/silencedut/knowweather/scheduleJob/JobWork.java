@@ -25,7 +25,6 @@ public class JobWork implements Scheduler {
         JobInfo.Builder builder = new JobInfo.Builder(JOB_ID, new ComponentName(context.getPackageName(), cls.getName()));
         builder.setPeriodic(seconds * 1000);
         builder.setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
-
         jobScheduler.schedule(builder.build());
     }
 

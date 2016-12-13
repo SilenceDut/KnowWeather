@@ -5,6 +5,8 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.os.Build;
 
+import com.silencedut.knowweather.ModelManager;
+import com.silencedut.knowweather.model.WeatherModel;
 import com.silencedut.knowweather.remoteviews.RemoteViewsHelper;
 import com.silencedut.knowweather.weather.callbacks.WeatherCallBack;
 import com.silencedut.router.Router;
@@ -30,9 +32,11 @@ public class JobSchedulerService extends JobService implements WeatherCallBack.N
 
     @Override
     public boolean onStartJob(JobParameters params) {
+        ModelManager.getModel(WeatherModel.class).updateDefaultWeather();
         RemoteViewsHelper.showNotification(this);
         return true;
     }
+
 
     @Override
     public boolean onStopJob(JobParameters params) {

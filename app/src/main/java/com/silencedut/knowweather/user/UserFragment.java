@@ -6,6 +6,7 @@ import android.support.v7.widget.SwitchCompat;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.silencedut.knowweather.R;
 import com.silencedut.knowweather.common.BaseFragment;
@@ -65,7 +66,7 @@ public class UserFragment extends BaseFragment {
 
         mNotificationThemeDialog = new AlertDialog.Builder(getContext(), R.style.MyAlertDialogStyle);
         mNotificationThemeDialog.setTitle(R.string.notification_theme);
-        int which = PreferencesUtil.get(Constants.NOTIFICATION_THEME, 0);
+        int which = PreferencesUtil.get(Constants.NOTIFICATION_THEME, 1);
         mNotificationTheme.setText(Constants.getNotificationName(which));
 
         mAlarmSwitch.setChecked(PreferencesUtil.get(Constants.ALARM_ALLOW, false));
@@ -94,14 +95,17 @@ public class UserFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.notification_choose:
-                int which = PreferencesUtil.get(Constants.NOTIFICATION_THEME, 0);
+                int which = PreferencesUtil.get(Constants.NOTIFICATION_THEME, 1);
                 mNotificationThemeDialog.setSingleChoiceItems(R.array.notification_theme_key, which, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        if(which==0) {
+                            Toast.makeText(getContext(), R.string.follow_system_warn, Toast.LENGTH_LONG).show();
+                        }
                         PreferencesUtil.put(Constants.NOTIFICATION_THEME, which);
                         mNotificationTheme.setText(Constants.getNotificationName(which));
                         Router.getInstance().getReceiver(WeatherCallBack.NotificationStatus.class).onUpdateNotification();
-                        dialog.dismiss();
                     }
                 });
                 mNotificationThemeDialog.show();

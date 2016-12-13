@@ -1,7 +1,7 @@
 # KnowWeather
 A concise and nice weather app 
 
-建议先下载应用【[应用宝](http://sj.qq.com/myapp/detail.htm?apkName=com.silencedut.knowweather)，或[腾讯bugly分发平台](https://beta.bugly.qq.com/knowweather)】体验下，以免浪费你的时间O(∩_∩)O~~。
+建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
 
 #效果图
 录屏软件导致图像模糊，应用实际效果更好
@@ -32,6 +32,11 @@ A concise and nice weather app
  * 微信小程序
  
  问题交流QQ群：292976661
+ 
+#天气接口使用声明
+ 
+ 现在这个天气的接口由我在维护，如果你的应用使用了此接口，请指明出处，如果使用上线作品，请提前与我联系，否则因为服务器问题对你的应用造成影响概不负责。
+ 
 
 # License
 

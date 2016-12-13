@@ -31,12 +31,10 @@ public class CityModel extends BaseModel {
     private String mLocationId = Constants.DEFAULT_STR;
     private String mDefaultId = Constants.DEFAULT_STR;
 
-    private WeatherModel mWeatherModel;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mWeatherModel = ModelManager.getModel(WeatherModel.class);
         mDefaultId = PreferencesUtil.get(Constants.DEFAULT_CITY, Constants.DEFAULT_STR);
         mLocationId = PreferencesUtil.get(Constants.LOCATION, Constants.DEFAULT_STR);
         initLocation();
@@ -150,7 +148,7 @@ public class CityModel extends BaseModel {
         }
         String defaultCityId = getDefaultId();
         if (defaultCityId.equals(cityId)) {
-            mWeatherModel.updateWeather(getLocationCityId());
+            ModelManager.getModel(WeatherModel.class).updateWeather(getLocationCityId());
         }
         defaultFollowed.remove(cityId);
         PreferencesUtil.remove(cityId);

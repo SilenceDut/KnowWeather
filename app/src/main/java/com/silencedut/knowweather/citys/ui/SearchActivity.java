@@ -205,4 +205,8 @@ public class SearchActivity extends BaseActivity implements SearchCityView {
         }
     }
 
+    @Override
+    public Context getContext() {
+        return this;
+    }
 }

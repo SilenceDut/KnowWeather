@@ -46,10 +46,17 @@ public class WeatherModel extends BaseModel {
     }
 
 
+    public void updateDefaultWeather() {
+
+        String defaultCity = ModelManager.getModel(CityModel.class).getDefaultId();
+        updateWeather(defaultCity);
+    }
+
+
     public void updateWeather(final String cityId) {
 
         Router.getInstance().getReceiver(MainView.class).onRefreshing(true);
-        Router.getInstance().getReceiver(WeatherCallBack.NotificationStatus.class).clearAlarm();
+
         Call<WeatherEntity> weatherEntityCall = mWeatherApiService.getWeather(cityId);
         weatherEntityCall.enqueue(new Callback<WeatherEntity>() {
             @Override
