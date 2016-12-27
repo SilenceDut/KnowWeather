@@ -16,9 +16,9 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
+import com.silencedut.knowweather.MainActivity;
 import com.silencedut.knowweather.ModelManager;
 import com.silencedut.knowweather.R;
-import com.silencedut.knowweather.SplashActivity;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.model.WeatherModel;
 import com.silencedut.knowweather.utils.PreferencesUtil;
@@ -86,7 +86,6 @@ public class RemoteViewsHelper {
 
         Notification notification = new NotificationCompat.Builder(context).setOngoing(false).setPriority(NotificationCompat.PRIORITY_MAX).setContentTitle(alarmsEntity.getAlarmTypeDesc()).setContentText(alarmsEntity.getAlarmDesc()).setSmallIcon(R.mipmap.icon).build();
 
-
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(NOTICE_ID_TYPE_ALARM, notification);
 
@@ -125,7 +124,7 @@ public class RemoteViewsHelper {
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), themeId);
 
-        Intent intent = new Intent(context, SplashActivity.class);
+        Intent intent = new Intent(context, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent contentIntent = PendingIntent.getActivity(context, (int) SystemClock.uptimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.notification_container, contentIntent);

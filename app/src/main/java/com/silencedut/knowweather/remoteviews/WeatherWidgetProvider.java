@@ -34,31 +34,16 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
         if (UPDATE_ACTION.equals(action)) {
 
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-            WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
-            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
-
-            if (weatherEntity == null) {
-                return;
-            }
-
-            WeatherEntity.BasicEntity basic = weatherEntity.getBasic();
-            remoteViews.setTextViewText(R.id.temp,basic.getTemp());
-            remoteViews.setTextViewText(R.id.weather_status, basic.getWeather());
-            remoteViews.setTextViewText(R.id.city, basic.getCity());
-            remoteViews.setImageViewResource(R.id.status_icon, Constants.getIconId(basic.getWeather()));
-
-            Intent newTaskIntent = new Intent(context, SplashActivity.class);
-            newTaskIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            PendingIntent pIntent = PendingIntent.getActivity(context, 0, newTaskIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-            remoteViews.setOnClickPendingIntent(R.id.widget_container, pIntent);
-            appWidgetManager.updateAppWidget(new ComponentName(context, WeatherWidgetProvider.class), remoteViews);
+            updateWidget(context,appWidgetManager);
         }
 
     }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-
+        updateWidget(context,appWidgetManager);
+    }
+    private void updateWidget(Context context,AppWidgetManager appWidgetManager) {
         WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 
@@ -77,7 +62,6 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, newTaskIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.widget_container, pIntent);
         appWidgetManager.updateAppWidget(new ComponentName(context, WeatherWidgetProvider.class), remoteViews);
-
     }
 
 }
