@@ -45,7 +45,7 @@ public class RemoteViewsHelper {
 
     public static void updateNotification(Service service) {
         boolean show = PreferencesUtil.get(Constants.NOTIFICATION_ALLOW, true);
-        if (!show) {
+        if (!show||service==null) {
             return;
         }
 
