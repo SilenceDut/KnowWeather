@@ -24,7 +24,7 @@ public abstract class BaseActivity extends AppCompatActivity implements UIInit {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Router.getInstance().register(this);
+        Router.instance().register(this);
         initBeforeView();
         setContentView(getContentViewId());
         ButterKnife.bind(this);
@@ -57,6 +57,6 @@ public abstract class BaseActivity extends AppCompatActivity implements UIInit {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Router.getInstance().unregister(this);
+        Router.instance().unregister(this);
     }
 }

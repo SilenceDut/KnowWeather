@@ -55,7 +55,7 @@ public class WeatherModel extends BaseModel {
 
     public void updateWeather(final String cityId) {
 
-        Router.getInstance().getReceiver(MainView.class).onRefreshing(true);
+        Router.instance().getReceiver(MainView.class).onRefreshing(true);
 
         Call<WeatherEntity> weatherEntityCall = mWeatherApiService.getWeather(cityId);
         weatherEntityCall.enqueue(new Callback<WeatherEntity>() {
@@ -82,7 +82,7 @@ public class WeatherModel extends BaseModel {
 
     private void onWeatherEntity(WeatherEntity weatherEntity) {
 
-        Router.getInstance().getReceiver(ModelCallback.WeatherResult.class).onWeather(weatherEntity);
-        Router.getInstance().getReceiver(WeatherCallBack.NotificationStatus.class).onUpdateNotification();
+        Router.instance().getReceiver(ModelCallback.WeatherResult.class).onWeather(weatherEntity);
+        Router.instance().getReceiver(WeatherCallBack.NotificationStatus.class).onUpdateNotification();
     }
 }

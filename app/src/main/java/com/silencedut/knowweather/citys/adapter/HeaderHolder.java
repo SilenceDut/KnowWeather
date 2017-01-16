@@ -51,7 +51,7 @@ public class HeaderHolder extends BaseViewHolder<HeaderData> implements ModelCal
 
     public HeaderHolder(View itemView, BaseRecyclerAdapter baseRecyclerAdapter) {
         super(itemView, baseRecyclerAdapter);
-        Router.getInstance().register(this);
+        Router.instance().register(this);
 
     }
 

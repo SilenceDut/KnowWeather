@@ -38,7 +38,7 @@ public class LifeIndexesHolder extends BaseViewHolder<LifeIndexData> implements 
 
     public LifeIndexesHolder(View itemView, BaseRecyclerAdapter baseRecyclerAdapter) {
         super(itemView, baseRecyclerAdapter);
-        Router.getInstance().register(this);
+        Router.instance().register(this);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class LifeIndexesHolder extends BaseViewHolder<LifeIndexData> implements 
 
     @OnClick(R.id.life_advice)
     public void onClick() {
-        Router.getInstance().getReceiver(WeatherCallBack.LifeAdvice.class).lifeAdvice(getContext().getString(R.string.lifeIndexes), getContext().getString(R.string.lifeIndexes));
+        Router.instance().getReceiver(WeatherCallBack.LifeAdvice.class).lifeAdvice(getContext().getString(R.string.lifeIndexes), getContext().getString(R.string.lifeIndexes));
         mLifeAdvice.setVisibility(View.GONE);
 
     }
@@ -134,7 +134,7 @@ public class LifeIndexesHolder extends BaseViewHolder<LifeIndexData> implements 
 
         @OnClick(R.id.life_index_content)
         public void onClick() {
-            Router.getInstance().getReceiver(WeatherCallBack.LifeAdvice.class).lifeAdvice(weatherLifeIndexData.getName(), weatherLifeIndexData.getContent());
+            Router.instance().getReceiver(WeatherCallBack.LifeAdvice.class).lifeAdvice(weatherLifeIndexData.getName(), weatherLifeIndexData.getContent());
         }
     }
 

@@ -31,7 +31,7 @@ public abstract class BaseFragment extends Fragment implements UIInit {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Router.getInstance().register(this);
+        Router.instance().register(this);
         initBeforeView();
     }
 
@@ -43,7 +43,7 @@ public abstract class BaseFragment extends Fragment implements UIInit {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Router.getInstance().unregister(this);
+        Router.instance().unregister(this);
     }
 
     @Nullable

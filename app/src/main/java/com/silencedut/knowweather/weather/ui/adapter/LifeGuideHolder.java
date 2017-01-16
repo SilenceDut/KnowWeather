@@ -21,7 +21,7 @@ public class LifeGuideHolder extends BaseViewHolder<LifeIndexGuideData> implemen
 
     public LifeGuideHolder(View itemView, BaseRecyclerAdapter baseRecyclerAdapter) {
         super(itemView, baseRecyclerAdapter);
-        Router.getInstance().register(this);
+        Router.instance().register(this);
     }
 
     @Override

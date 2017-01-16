@@ -24,12 +24,12 @@ public abstract class BasePresenter<T extends BaseView> {
 
     private void attachView(T presenterView) {
         mPresentView = presenterView;
-        Router.getInstance().register(this);
+        Router.instance().register(this);
     }
 
     public void onDetchView() {
         mPresentView = null;
-        Router.getInstance().unregister(this);
+        Router.instance().unregister(this);
     }
 
 

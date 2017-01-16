@@ -21,7 +21,7 @@ public class AlarmService extends Service implements WeatherCallBack.Notificatio
     @Override
     public void onCreate() {
         super.onCreate();
-        Router.getInstance().register(this);
+        Router.instance().register(this);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class AlarmService extends Service implements WeatherCallBack.Notificatio
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Router.getInstance().unregister(this);
+        Router.instance().unregister(this);
 
     }
 

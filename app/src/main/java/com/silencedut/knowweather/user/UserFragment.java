@@ -60,7 +60,7 @@ public class UserFragment extends BaseFragment {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 PreferencesUtil.put(Constants.NOTIFICATION_ALLOW, isChecked);
-                Router.getInstance().getReceiver(WeatherCallBack.NotificationStatus.class).onAllowNotification(isChecked);
+                Router.instance().getReceiver(WeatherCallBack.NotificationStatus.class).onAllowNotification(isChecked);
             }
         });
 
@@ -105,7 +105,7 @@ public class UserFragment extends BaseFragment {
                         }
                         PreferencesUtil.put(Constants.NOTIFICATION_THEME, which);
                         mNotificationTheme.setText(Constants.getNotificationName(which));
-                        Router.getInstance().getReceiver(WeatherCallBack.NotificationStatus.class).onUpdateNotification();
+                        Router.instance().getReceiver(WeatherCallBack.NotificationStatus.class).onUpdateNotification();
                     }
                 });
                 mNotificationThemeDialog.show();

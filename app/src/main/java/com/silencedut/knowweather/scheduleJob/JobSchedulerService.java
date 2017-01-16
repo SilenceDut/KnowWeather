@@ -21,13 +21,13 @@ public class JobSchedulerService extends JobService implements WeatherCallBack.N
     @Override
     public void onCreate() {
         super.onCreate();
-        Router.getInstance().register(this);
+        Router.instance().register(this);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Router.getInstance().unregister(this);
+        Router.instance().unregister(this);
     }
 
     @Override

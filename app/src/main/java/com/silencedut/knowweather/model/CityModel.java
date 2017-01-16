@@ -86,7 +86,7 @@ public class CityModel extends BaseModel {
                                 PreferencesUtil.put(Constants.LOCATION, mLocationId);
 
                             }
-                            Router.getInstance().getReceiver(ModelCallback.LocationResult.class).onLocationComplete(locationCityId, aMapLocation.getErrorCode() == 0);
+                            Router.instance().getReceiver(ModelCallback.LocationResult.class).onLocationComplete(locationCityId, aMapLocation.getErrorCode() == 0);
                         }
                     },false);
                 }
@@ -125,7 +125,7 @@ public class CityModel extends BaseModel {
             @Override
             public void run() {
                 List<CityInfoData> allCities = DBManage.getInstance().getAllCities();
-                Router.getInstance().getReceiver(SearchCityView.class).onAllCities(allCities);
+                Router.instance().getReceiver(SearchCityView.class).onAllCities(allCities);
             }
         },false);
     }
@@ -135,7 +135,7 @@ public class CityModel extends BaseModel {
             @Override
             public void run() {
                 List<CityInfoData> matchedCities = DBManage.getInstance().searchCity(key);
-                Router.getInstance().getReceiver(SearchCityView.class).onMatched(matchedCities);
+                Router.instance().getReceiver(SearchCityView.class).onMatched(matchedCities);
             }
         },false);
     }
