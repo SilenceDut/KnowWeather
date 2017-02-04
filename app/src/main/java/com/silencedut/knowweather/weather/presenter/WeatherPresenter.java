@@ -71,7 +71,7 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
             return;
         }
 
-        if (mCityModel.noDefaultCity()) {
+        if (mCityModel.noDefaultCity()||!mCityModel.getDefaultId().equals(locationId)) {
             getWeather(locationId);
         }
     }

@@ -58,8 +58,10 @@ dependencies {
 
     compile 'com.tencent.bugly:crashreport_upgrade:latest.release'//
 
-    compile 'com.silencedut:router:1.2.2'
+    compile 'com.silencedut:router:1.2.6'
+    apt 'com.silencedut:router-compiler:1.0.0'
     compile 'com.github.SilenceDut:ExpandableLayout:1.2.0'
+
     testCompile 'junit:junit:4.12'
 
 }
