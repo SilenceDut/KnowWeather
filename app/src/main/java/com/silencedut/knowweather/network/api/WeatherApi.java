@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 
 public interface WeatherApi {
 
-    String BASE_URL = "http://knowweather.duapp.com/";
+    String BASE_URL = "http://knowweather.duapp.com";
 
     @GET("/v1.0/weather/{cityId}")
     Call<WeatherEntity> getWeather(@Path("cityId") String cityId);
