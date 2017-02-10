@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     TextView mMainTemp;
     @BindView(R.id.container_layout)
     View mTitleContainer;
-    @BindView(R.id.tableLayout)
+    @BindView(R.id.tabLayout)
     TabLayout mTabLayout;
     @BindView(R.id.main_hours_forecast_recyclerView)
     RecyclerView mHoursForecastRecyclerView;
