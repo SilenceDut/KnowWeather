@@ -10,6 +10,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
@@ -25,6 +26,8 @@ import com.silencedut.knowweather.utils.PreferencesUtil;
 import com.silencedut.knowweather.utils.TimeUtil;
 import com.silencedut.knowweather.utils.Version;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
+
+import java.lang.reflect.Field;
 
 
 public class RemoteViewsHelper {
@@ -47,6 +50,18 @@ public class RemoteViewsHelper {
         boolean show = PreferencesUtil.get(Constants.NOTIFICATION_ALLOW, true);
         if (!show||service==null) {
             return;
+        }
+        try {
+            Field mBase = ContextWrapper.class.getDeclaredField("mBase");
+            mBase.setAccessible(true);
+            Context context = (Context) mBase.get(service);
+            if(context==null) {
+                return;
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
         }
 
         NotificationManager notificationManager = (NotificationManager) service.getSystemService(Context.NOTIFICATION_SERVICE);
