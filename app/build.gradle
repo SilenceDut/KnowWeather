@@ -57,6 +57,9 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 
+    debugCompile 'com.github.markzhai:blockcanary-android:1.5.0'
+    releaseCompile 'com.github.markzhai:blockcanary-no-op:1.5.0'
+
     compile 'com.tencent.bugly:crashreport_upgrade:latest.release'//
 
     compile 'com.silencedut:router:1.2.7'

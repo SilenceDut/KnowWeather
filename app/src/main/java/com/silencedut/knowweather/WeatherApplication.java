@@ -29,6 +29,8 @@ public class WeatherApplication extends Application {
         super.onCreate();
         sApplication = this;
 
+        TaskExecutor.init();
+
         DBManage.getInstance().copyCitysToDB();
 
         TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
