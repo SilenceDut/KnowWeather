@@ -47,7 +47,7 @@ public class FollowedCityPresenter extends BasePresenter<FollowedCityView> imple
         final List<FollowedCityData> followedCityDatas = new ArrayList<>();
 
 
-        TaskExecutor.executeTaskSerially(new Runnable() {
+        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
             @Override
             public void run() {
                 int length = 0;
@@ -69,6 +69,7 @@ public class FollowedCityPresenter extends BasePresenter<FollowedCityView> imple
                 if (followedCityDatas.size() == 0) {
                     return;
                 }
+
                 TaskExecutor.runOnUIThread(new Runnable() {
                     @Override
                     public void run() {

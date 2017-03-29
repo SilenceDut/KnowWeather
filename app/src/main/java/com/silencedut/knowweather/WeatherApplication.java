@@ -14,8 +14,6 @@ import com.tencent.bugly.beta.Beta;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-
 /**
  * Created by SilenceDut on 16/10/15.
  */
@@ -31,17 +29,14 @@ public class WeatherApplication extends Application {
         super.onCreate();
         sApplication = this;
 
-        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder().setDefaultFontPath("fonts/NotoSans-Regular.ttf").setFontAttrId(R.attr.fontPath).build());
-
         DBManage.getInstance().copyCitysToDB();
 
-        TaskExecutor.executeTask(new Runnable() {
+        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
             @Override
             public void run() {
                 PlatformConfig.setWeixin("wxf56994fcbedb2d97", "ceedf892637bed9b8d431e9eb2cf075a");
                 PlatformConfig.setQQZone("1105761457", "SdMWEVML7ct0szb1");
                 UMShareAPI.get(WeatherApplication.this);
-
             }
         });
 

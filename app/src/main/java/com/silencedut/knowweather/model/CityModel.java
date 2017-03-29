@@ -50,7 +50,7 @@ public class CityModel extends BaseModel {
             @Override
             public void onLocationChanged(final AMapLocation aMapLocation) {
                 if (aMapLocation != null) {
-                    TaskExecutor.executeTask(new Runnable() {
+                    TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
                         @Override
                         public void run() {
                             String locationCityId = Constants.DEFAULT_CITY_ID;
@@ -86,9 +86,10 @@ public class CityModel extends BaseModel {
                                 PreferencesUtil.put(Constants.LOCATION, mLocationId);
 
                             }
-                            Router.instance().getReceiver(ModelCallback.LocationResult.class).onLocationComplete(locationCityId, aMapLocation.getErrorCode() == 0);
+                            Router.instance().getReceiver(ModelCallback.LocationResult.class)
+                                    .onLocationComplete(locationCityId, aMapLocation.getErrorCode() == 0);
                         }
-                    },false);
+                    });
                 }
             }
         });
@@ -121,23 +122,23 @@ public class CityModel extends BaseModel {
     }
 
     public void getAllCities() {
-        TaskExecutor.executeTask(new Runnable() {
+        TaskExecutor.runOnIoThread(new Runnable() {
             @Override
             public void run() {
                 List<CityInfoData> allCities = DBManage.getInstance().getAllCities();
                 Router.instance().getReceiver(SearchCityView.class).onAllCities(allCities);
             }
-        },false);
+        });
     }
 
     public void matchCities(final String key) {
-        TaskExecutor.executeTask(new Runnable() {
+        TaskExecutor.runOnIoThread(new Runnable() {
             @Override
             public void run() {
                 List<CityInfoData> matchedCities = DBManage.getInstance().searchCity(key);
                 Router.instance().getReceiver(SearchCityView.class).onMatched(matchedCities);
             }
-        },false);
+        });
     }
 
     public void unFollowCity(String cityId) {

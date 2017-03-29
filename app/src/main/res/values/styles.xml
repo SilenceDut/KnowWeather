@@ -51,10 +51,6 @@
     </style>
 
 
-    <style name="TextAppearance.RobotoRegularPath" parent="android:TextAppearance">
-        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
-    </style>
-
     <style name="TextAppearance.RobotoThinPath" parent="android:TextAppearance">
         <item name="fontPath">fonts/Roboto-Thin.ttf</item>
     </style>

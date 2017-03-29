@@ -111,7 +111,6 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     @Override
     public void initBeforeView() {
         mWeatherPresenter = new WeatherPresenter(this);
-
     }
 
     @Override

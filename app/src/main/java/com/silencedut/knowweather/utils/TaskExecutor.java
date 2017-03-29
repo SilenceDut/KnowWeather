@@ -2,7 +2,9 @@ package com.silencedut.knowweather.utils;
 
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
+import android.os.Process;
 
 import java.util.concurrent.Executor;
 
@@ -15,31 +17,43 @@ import static android.os.AsyncTask.THREAD_POOL_EXECUTOR;
 public class TaskExecutor {
 
     private static Executor mParallelExecutor = AsyncTask.THREAD_POOL_EXECUTOR;
-    private static Executor mSerialExecutor = AsyncTask.SERIAL_EXECUTOR;
     private static Handler sHandler = new Handler(Looper.getMainLooper());
+    private static Handler sIoHandler ;
 
     private TaskExecutor() {
         mParallelExecutor = THREAD_POOL_EXECUTOR;
-        mSerialExecutor = AsyncTask.SERIAL_EXECUTOR;
+        HandlerThread handlerThread = new HandlerThread("ioThread",Process.THREAD_PRIORITY_BACKGROUND);
+        handlerThread.start();
+        sIoHandler = new Handler(handlerThread.getLooper());
+    }
+
+    public static void runOnIoThread(Runnable runnable) {
+        runOnIoThread(runnable,0);
+    }
+
+    public static void runOnIoThread(Runnable runnable,long delayed) {
+        sIoHandler.postDelayed(runnable,delayed);
+    }
+
+    public static void removeIoCallback(Runnable runnable) {
+        sIoHandler.removeCallbacks(runnable);
     }
 
     public static void runOnUIThread(Runnable runnable) {
         sHandler.post(runnable);
     }
 
-    public static void executeTask(Runnable task) {
-        executeTask(task, true);
+    public static void removeUICallback(Runnable runnable) {
+        sHandler.post(runnable);
     }
 
-    public static void executeTaskSerially(Runnable task) {
-        executeTask(task, false);
+    public static void executeTask(BackgroundTask task) {
+        mParallelExecutor.execute(task);
     }
 
-    public static void executeTask(Runnable task, boolean parallel) {
-        if (parallel) {
-            mParallelExecutor.execute(task);
-            return;
+    public static abstract class BackgroundTask implements Runnable {
+        public BackgroundTask () {
+            Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
         }
-        mSerialExecutor.execute(task);
     }
 }

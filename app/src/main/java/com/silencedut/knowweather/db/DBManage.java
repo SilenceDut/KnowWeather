@@ -45,7 +45,7 @@ public class DBManage {
         if (cityInited) {
             return;
         }
-        TaskExecutor.executeTask(new Runnable() {
+        TaskExecutor.runOnIoThread(new Runnable() {
             @Override
             public void run() {
                 String citys = FileUtil.assetFile2String("cityList.txt", WeatherApplication.getContext());
@@ -83,7 +83,7 @@ public class DBManage {
 
                 }
             }
-        },false);
+        });
     }
 
     /**

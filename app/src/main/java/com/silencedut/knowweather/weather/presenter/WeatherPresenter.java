@@ -44,7 +44,7 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
         mCityModel = ModelManager.getModel(CityModel.class);
         mWeatherModel = ModelManager.getModel(WeatherModel.class);
         mCityModel.startLocation();
-        TaskExecutor.executeTask(new Runnable() {
+        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
             @Override
             public void run() {
                 if (Build.VERSION.SDK_INT >= 23) {
