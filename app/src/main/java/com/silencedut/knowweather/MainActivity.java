@@ -26,8 +26,10 @@ import com.silencedut.knowweather.common.BaseActivity;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.common.adapter.BaseRecyclerAdapter;
 import com.silencedut.knowweather.common.customview.ShareDialog;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.knowweather.user.AboutActivity;
 import com.silencedut.knowweather.user.UserFragment;
+import com.silencedut.knowweather.utils.LogHelper;
 import com.silencedut.knowweather.utils.TimeUtil;
 import com.silencedut.knowweather.utils.UIUtil;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
@@ -231,11 +233,22 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
 
     @OnClick(R.id.float_action)
     public void onClick() {
+        LogHelper.d("TimeOutTest"+System.currentTimeMillis()/1000);
+        TaskScheduler.execute(new TaskScheduler.Task() {
+            @Override
+            public Object doInBackground() throws Exception {
+
+                return null;
+            }
+        });
+        LogHelper.d("TimeOutTest no block"+System.currentTimeMillis()/1000);
+
         mWeatherPresenter.updateDefaultWeather();
     }
 
     @Override
     public void onRefreshing(boolean refreshing) {
+
         if (refreshing) {
             mPostTimeTv.setText(R.string.refreshing);
             mRefreshStatus.setVisibility(View.VISIBLE);
@@ -314,6 +327,7 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -22,7 +22,6 @@ public class PreferencesUtil {
         return WeatherApplication.getContext().getSharedPreferences(name, Context.MODE_PRIVATE);
     }
 
-
     public static String getDefaultName() {
         return defaultName;
     }
@@ -126,8 +125,6 @@ public class PreferencesUtil {
 
     private static void put(final String name, final String key, final String value) {
         getPreferences(name).edit().putString(key, value).apply();
-
-
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -135,7 +132,6 @@ public class PreferencesUtil {
         getPreferences(name).edit().putStringSet(key, value).apply();
 
     }
-
 
     public static void remove(String key) {
         remove(defaultName, key);

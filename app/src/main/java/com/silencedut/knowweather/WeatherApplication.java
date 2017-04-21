@@ -7,7 +7,7 @@ import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
 import com.silencedut.knowweather.db.DBManage;
 import com.silencedut.knowweather.utils.LogHelper;
-import com.silencedut.knowweather.utils.TaskExecutor;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.squareup.leakcanary.LeakCanary;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
@@ -29,11 +29,11 @@ public class WeatherApplication extends Application {
         super.onCreate();
         sApplication = this;
 
-        TaskExecutor.init();
+        TaskScheduler.init();
 
         DBManage.getInstance().copyCitysToDB();
 
-        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
+        TaskScheduler.execute(new Runnable() {
             @Override
             public void run() {
                 PlatformConfig.setWeixin("wxf56994fcbedb2d97", "ceedf892637bed9b8d431e9eb2cf075a");

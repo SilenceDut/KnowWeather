@@ -17,7 +17,7 @@ import com.silencedut.knowweather.model.WeatherModel;
 import com.silencedut.knowweather.model.callbacks.ModelCallback;
 import com.silencedut.knowweather.utils.Check;
 import com.silencedut.knowweather.utils.PreferencesUtil;
-import com.silencedut.knowweather.utils.TaskExecutor;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
 import com.silencedut.knowweather.weather.ui.adapter.AqiData;
 import com.silencedut.knowweather.weather.ui.adapter.DailyWeatherData;
@@ -44,7 +44,7 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
         mCityModel = ModelManager.getModel(CityModel.class);
         mWeatherModel = ModelManager.getModel(WeatherModel.class);
         mCityModel.startLocation();
-        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
+        TaskScheduler.execute(new Runnable() {
             @Override
             public void run() {
                 if (Build.VERSION.SDK_INT >= 23) {
@@ -70,6 +70,7 @@ public class WeatherPresenter extends BasePresenter<MainView> implements ModelCa
             SearchActivity.navigationActivity(mMainView.getContext());
             return;
         }
+
 
         if (mCityModel.noDefaultCity()||!mCityModel.getDefaultId().equals(locationId)) {
             getWeather(locationId);

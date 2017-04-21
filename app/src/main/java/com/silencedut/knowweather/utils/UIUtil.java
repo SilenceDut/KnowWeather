@@ -166,5 +166,4 @@ public class UIUtil {
             return Resources.getSystem().getDimensionPixelSize(id);
         }
     }
-
 }

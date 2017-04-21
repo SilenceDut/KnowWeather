@@ -11,7 +11,7 @@ import com.silencedut.knowweather.network.AppHttpClient;
 import com.silencedut.knowweather.network.api.WeatherApi;
 import com.silencedut.knowweather.utils.LogHelper;
 import com.silencedut.knowweather.utils.PreferencesUtil;
-import com.silencedut.knowweather.utils.TaskExecutor;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
 
 import java.io.IOException;
@@ -47,7 +47,7 @@ public class FollowedCityPresenter extends BasePresenter<FollowedCityView> imple
         final List<FollowedCityData> followedCityDatas = new ArrayList<>();
 
 
-        TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
+        TaskScheduler.execute(new Runnable() {
             @Override
             public void run() {
                 int length = 0;
@@ -70,7 +70,7 @@ public class FollowedCityPresenter extends BasePresenter<FollowedCityView> imple
                     return;
                 }
 
-                TaskExecutor.runOnUIThread(new Runnable() {
+                TaskScheduler.runOnUIThread(new Runnable() {
                     @Override
                     public void run() {
                         mPresentView.onAllFollowedCities(followedCityDatas);

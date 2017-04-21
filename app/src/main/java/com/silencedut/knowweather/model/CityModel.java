@@ -7,13 +7,13 @@ import com.amap.api.location.AMapLocationListener;
 import com.silencedut.knowweather.ModelManager;
 import com.silencedut.knowweather.WeatherApplication;
 import com.silencedut.knowweather.citys.adapter.CityInfoData;
-import com.silencedut.knowweather.citys.ui.presenter.SearchCityView;
 import com.silencedut.knowweather.common.BaseModel;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.db.DBManage;
 import com.silencedut.knowweather.model.callbacks.ModelCallback;
 import com.silencedut.knowweather.utils.PreferencesUtil;
-import com.silencedut.knowweather.utils.TaskExecutor;
+import com.silencedut.knowweather.scheduler.TaskCallback;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.router.Router;
 
 import java.util.HashSet;
@@ -50,8 +50,7 @@ public class CityModel extends BaseModel {
             @Override
             public void onLocationChanged(final AMapLocation aMapLocation) {
                 if (aMapLocation != null) {
-                    TaskExecutor.executeTask(new TaskExecutor.BackgroundTask() {
-                        @Override
+                    TaskScheduler.execute(new Runnable() {
                         public void run() {
                             String locationCityId = Constants.DEFAULT_CITY_ID;
                             if (aMapLocation.getErrorCode() == 0) {
@@ -121,22 +120,22 @@ public class CityModel extends BaseModel {
         return mCityName;
     }
 
-    public void getAllCities() {
-        TaskExecutor.runOnIoThread(new Runnable() {
+    public void getAllCities(final TaskCallback.Success<List<CityInfoData>> taskCallback) {
+        TaskScheduler.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
                 List<CityInfoData> allCities = DBManage.getInstance().getAllCities();
-                Router.instance().getReceiver(SearchCityView.class).onAllCities(allCities);
+                TaskScheduler.notifySuccessToUI(allCities,taskCallback);
             }
         });
     }
 
-    public void matchCities(final String key) {
-        TaskExecutor.runOnIoThread(new Runnable() {
+    public void matchCities(final String key,final TaskCallback.Success<List<CityInfoData>> matchedCityCallback) {
+        TaskScheduler.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
                 List<CityInfoData> matchedCities = DBManage.getInstance().searchCity(key);
-                Router.instance().getReceiver(SearchCityView.class).onMatched(matchedCities);
+                TaskScheduler.notifySuccessToUI(matchedCities,matchedCityCallback);
             }
         });
     }

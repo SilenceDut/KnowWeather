@@ -9,7 +9,7 @@ import com.silencedut.knowweather.WeatherApplication;
 import com.silencedut.knowweather.citys.adapter.CityInfoData;
 import com.silencedut.knowweather.utils.FileUtil;
 import com.silencedut.knowweather.utils.PreferencesUtil;
-import com.silencedut.knowweather.utils.TaskExecutor;
+import com.silencedut.knowweather.scheduler.TaskScheduler;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,7 +45,8 @@ public class DBManage {
         if (cityInited) {
             return;
         }
-        TaskExecutor.runOnIoThread(new Runnable() {
+
+        TaskScheduler.runOnBackgroundThread(new Runnable() {
             @Override
             public void run() {
                 String citys = FileUtil.assetFile2String("cityList.txt", WeatherApplication.getContext());
