@@ -27,7 +27,7 @@ import butterknife.OnClick;
 
 public class LifeIndexesHolder extends BaseViewHolder<LifeIndexData> implements WeatherCallBack.LifeAdvice {
 
-    private static final int[] LIFE_INDEXES_ICONIDS = {R.mipmap.protection, R.mipmap.clothing, R.mipmap.sport_mode, R.mipmap.shopping, R.mipmap.sun_cure, R.mipmap.wash_car, R.mipmap.health, R.mipmap.night_light};
+    private static final int[] LIFE_INDEXES_ICONIDS = { R.mipmap.sun_cure,R.mipmap.clothing, R.mipmap.health,R.mipmap.wash_car, R.mipmap.protection,R.mipmap.sport_mode, R.mipmap.shopping,   R.mipmap.night_light};
 
     @BindView(R.id.lifeRecyclerView)
     RecyclerView mRecyclerView;

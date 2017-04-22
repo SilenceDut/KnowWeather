@@ -150,7 +150,6 @@ public class TaskScheduler {
                         if(!isCanceled()){
                             success(result);
                         }
-
                     }
                 });
             } catch (final Exception e) {
