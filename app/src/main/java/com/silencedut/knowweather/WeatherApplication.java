@@ -5,7 +5,7 @@ import android.os.Environment;
 
 import com.facebook.stetho.Stetho;
 import com.google.gson.Gson;
-import com.silencedut.knowweather.db.DBManage;
+import com.silencedut.knowweather.repository.db.DBManage;
 import com.silencedut.knowweather.utils.LogHelper;
 import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.squareup.leakcanary.LeakCanary;

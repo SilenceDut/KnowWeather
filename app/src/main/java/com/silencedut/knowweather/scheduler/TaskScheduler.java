@@ -6,7 +6,6 @@ import android.os.Looper;
 import android.os.Process;
 import android.support.annotation.NonNull;
 
-import com.silencedut.knowweather.scheduler.exception.DefaultErrorBundle;
 import com.silencedut.knowweather.scheduler.exception.ErrorBundle;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -92,7 +91,7 @@ public class TaskScheduler {
                     runOnUIThread(new Runnable() {
                         @Override
                         public void run() {
-                            timeOutTask.error(new DefaultErrorBundle(e));
+                            timeOutTask.error(new ErrorBundle(e));
                             timeOutTask.setCanceled(true);
                         }
                     });
@@ -156,7 +155,7 @@ public class TaskScheduler {
                 runOnUIThread(new Runnable() {
                     @Override
                     public void run() {
-                        error(new DefaultErrorBundle(e));
+                        error(new ErrorBundle(e));
                     }
                 });
 

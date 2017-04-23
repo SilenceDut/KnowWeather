@@ -1,4 +1,4 @@
-package com.silencedut.knowweather.db;
+package com.silencedut.knowweather.repository.db;
 
 import android.content.ContentValues;
 import android.database.Cursor;
