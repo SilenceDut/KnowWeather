@@ -204,7 +204,7 @@ public class TaskScheduler {
         });
     }
 
-    public static <R,E > void notifySuccessToUI(final R response, final TaskCallback.Callback<R,E> taskCallback) {
+    public static <R> void notifySuccessToUI(final R response, final TaskCallback.Callback<R> taskCallback) {
         runOnUIThread(new Runnable() {
             @Override
             public void run() {
@@ -213,7 +213,7 @@ public class TaskScheduler {
         });
     }
 
-    public static <R,E > void notifyErrorToUI(final E error, final TaskCallback.Callback<R,E> taskCallback) {
+    public static <R> void notifyErrorToUI(final ErrorBundle error, final TaskCallback.Callback<R> taskCallback) {
         runOnUIThread(new Runnable() {
             @Override
             public void run() {
