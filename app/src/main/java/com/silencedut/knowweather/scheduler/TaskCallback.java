@@ -11,9 +11,10 @@ public interface TaskCallback{
         abstract void onError(E error);
     }
 
-    abstract class Success<R> {
-        public Type rClass = ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-        public abstract void onSuccess(R response);
+    abstract class Success<R> extends Callback<R,Object> {
+        void onError(Object error) {
+
+        }
     }
 
 }
