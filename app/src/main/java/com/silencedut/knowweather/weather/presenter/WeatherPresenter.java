@@ -16,7 +16,7 @@ import com.silencedut.knowweather.model.CityModel;
 import com.silencedut.knowweather.model.WeatherModel;
 import com.silencedut.knowweather.model.callbacks.ModelCallback;
 import com.silencedut.knowweather.utils.Check;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
 import com.silencedut.knowweather.weather.ui.adapter.AqiData;

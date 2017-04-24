@@ -21,14 +21,14 @@ import java.lang.reflect.Type;
 
 /**
  * Created by SilenceDut on 17/04/19.
- * Json GsonHelper/Deserializer.
+ * Json JsonHelper/Deserializer.
  */
 
-public class GsonHelper {
+public class JsonHelper {
 
   private static final Gson gson = new Gson();
 
-  GsonHelper() {}
+  JsonHelper() {}
 
   /**
    * Serialize an object to Json.

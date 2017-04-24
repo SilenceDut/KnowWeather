@@ -1,4 +1,4 @@
-package com.silencedut.knowweather.utils;
+package com.silencedut.knowweather.repository;
 
 import android.annotation.TargetApi;
 import android.content.Context;

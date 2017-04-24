@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Build;
 
 import com.silencedut.knowweather.common.Constants;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.utils.Version;
 
 /**

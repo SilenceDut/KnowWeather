@@ -15,7 +15,6 @@
  */
 package com.silencedut.knowweather.repository;
 
-import android.content.Context;
 import android.os.Environment;
 
 import com.silencedut.knowweather.scheduler.TaskCallback;
@@ -27,18 +26,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
+
 
 /**
  * Created by SilenceDut on 17/04/19.
  * Helper class to do operations on regular files/directories.
  */
-
 public class FileHelper {
 
-    private static Context mContext;
-    private static final String DEFAULT_FILE_NAME = "werewolf_cache";
+    private static final String DEFAULT_FILE_NAME = "knowweather_cache";
 
     private FileHelper() {
 
@@ -57,9 +53,11 @@ public class FileHelper {
 
     public static String getAppFolder() {
         // Create the application workspace
-        File mainDir = new File(sdcardRoot() + File.separator + DEFAULT_FILE_NAME + File.separator);
-        makeDir(mainDir);
-        return mainDir.getPath();
+        File cacheDir = new File(sdcardRoot() + File.separator + DEFAULT_FILE_NAME + File.separator);
+        if(!cacheDir.exists()) {
+            makeDir(cacheDir);
+        }
+        return cacheDir.getPath();
     }
 
     public static boolean makeDir(File dir) {
@@ -76,45 +74,35 @@ public class FileHelper {
      * @return A valid file.
      */
     public static File buildFile(String fileId) {
-        String fileNameBuilder =sdcardRoot() + File.separator + DEFAULT_FILE_NAME + fileId;
+        File file = new File(getAppFolder(),fileId);
 
-        return new File(fileNameBuilder);
-    }
-
-    /**
-     *
-     * @param fileId The fileId to write to Disk.
-     */
-    public static void writeToFile(String fileId, final String fileContent) {
-        final File file = buildFile(fileId);
-        if (!file.exists()) {
-            TaskScheduler.execute(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        FileWriter writer = new FileWriter(file);
-                        writer.write(fileContent);
-                        writer.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+        if(!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        return file;
     }
+
 
     /**
      *
      * @param fileId The fileId to write to Disk.
      */
     public static void writeToFile(String fileId, final Object fileObj) {
+        if(fileObj==null) {
+            return;
+        }
         final File file = buildFile(fileId);
-        if (!file.exists()) {
+        if (exists(file)) {
             TaskScheduler.execute(new Runnable() {
                 @Override
                 public void run() {
                     try {
-                        String content = GsonHelper.toJson(fileObj);
+                        String content = fileObj.getClass().equals(String.class)
+                                ?fileObj.toString():JsonHelper.toJson(fileObj);
                         FileWriter writer = new FileWriter(file);
                         writer.write(content);
                         writer.close();
@@ -154,7 +142,7 @@ public class FileHelper {
      */
     public static <T> T readFileContent(String fileId ,Class<T> ype) {
         String fileContent = readFileContent(fileId);
-        return GsonHelper.fromJson(fileContent,ype);
+        return JsonHelper.fromJson(fileContent,ype);
     }
 
     /**
@@ -167,7 +155,7 @@ public class FileHelper {
             public void run() {
                 String fileContent = readFileContent(fileId);
 
-                T result = GsonHelper.fromJson(fileContent,fileCallBack.rType);
+                T result = JsonHelper.fromJson(fileContent,fileCallBack.rType);
                 if(result!=null) {
                     TaskScheduler.notifySuccessToUI(result, fileCallBack);
                 }else {
@@ -206,25 +194,5 @@ public class FileHelper {
                 }
             }
         });
-
-    }
-
-    public static class ParameterizedTypeImpl implements ParameterizedType {
-        private final Class raw;
-        private final Type[] args;
-        public ParameterizedTypeImpl(Class raw, Type[] args) {
-            this.raw = raw;
-            this.args = args != null ? args : new Type[0];
-        }
-        @Override
-        public Type[] getActualTypeArguments() {
-            return args;
-        }
-        @Override
-        public Type getRawType() {
-            return raw;
-        }
-        @Override
-        public Type getOwnerType() {return null;}
     }
 }

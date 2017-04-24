@@ -8,7 +8,7 @@ import com.silencedut.knowweather.model.callbacks.ModelCallback;
 import com.silencedut.knowweather.network.AppHttpClient;
 import com.silencedut.knowweather.network.api.WeatherApi;
 import com.silencedut.knowweather.utils.LogHelper;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.weather.callbacks.WeatherCallBack;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;
 import com.silencedut.knowweather.weather.presenter.MainView;

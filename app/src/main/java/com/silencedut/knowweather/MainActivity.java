@@ -237,8 +237,6 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     }
 
 
-
-
     @Override
     public void onRefreshing(boolean refreshing) {
 

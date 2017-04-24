@@ -15,7 +15,7 @@ import com.silencedut.knowweather.citys.ui.presenter.FollowedCityPresenter;
 import com.silencedut.knowweather.citys.ui.presenter.FollowedCityView;
 import com.silencedut.knowweather.common.BaseFragment;
 import com.silencedut.knowweather.common.Constants;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 
 import java.util.List;
 

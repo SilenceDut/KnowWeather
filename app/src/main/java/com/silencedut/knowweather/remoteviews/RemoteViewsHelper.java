@@ -22,7 +22,7 @@ import com.silencedut.knowweather.ModelManager;
 import com.silencedut.knowweather.R;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.model.WeatherModel;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.utils.TimeUtil;
 import com.silencedut.knowweather.utils.Version;
 import com.silencedut.knowweather.weather.entity.WeatherEntity;

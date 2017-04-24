@@ -11,7 +11,7 @@ import com.silencedut.knowweather.common.BaseModel;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.repository.db.DBManage;
 import com.silencedut.knowweather.model.callbacks.ModelCallback;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.scheduler.TaskCallback;
 import com.silencedut.knowweather.scheduler.TaskScheduler;
 import com.silencedut.router.Router;

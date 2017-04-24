@@ -8,7 +8,7 @@ import com.github.promeg.pinyinhelper.Pinyin;
 import com.silencedut.knowweather.WeatherApplication;
 import com.silencedut.knowweather.citys.adapter.CityInfoData;
 import com.silencedut.knowweather.utils.FileUtil;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.scheduler.TaskScheduler;
 
 import java.util.ArrayList;

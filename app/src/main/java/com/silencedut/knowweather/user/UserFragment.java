@@ -12,7 +12,7 @@ import com.silencedut.knowweather.R;
 import com.silencedut.knowweather.common.BaseFragment;
 import com.silencedut.knowweather.common.Constants;
 import com.silencedut.knowweather.scheduleJob.PollingUtils;
-import com.silencedut.knowweather.utils.PreferencesUtil;
+import com.silencedut.knowweather.repository.PreferencesUtil;
 import com.silencedut.knowweather.weather.callbacks.WeatherCallBack;
 import com.silencedut.router.Router;
 
