@@ -28,7 +28,7 @@ public class TaskScheduler {
     private static final AtomicInteger mHandlerCount = new AtomicInteger(1);
     private static ExecutorService mParallelExecutor ;
     private static ExecutorService mTimeOutExecutor ;
-    private static Handler sHandler = new Handler(Looper.getMainLooper());
+    private static Handler sMainHandler = new Handler(Looper.getMainLooper());
     private static Handler sBackgroundHandler ;
     private static boolean sInited;
 
@@ -185,27 +185,23 @@ public class TaskScheduler {
     }
 
     public static void runOnUIThread(Runnable runnable) {
-        sHandler.post(runnable);
+        if(isMainThread()) {
+            runnable.run();
+        }else {
+            sMainHandler.post(runnable);
+        }
     }
 
     public static void removeUICallback(Runnable runnable) {
-        sHandler.post(runnable);
+        sMainHandler.removeCallbacks(runnable);
     }
 
     public static ExecutorService getExecutor() {
         return mParallelExecutor;
     }
 
-    public static <R > void notifySuccessToUI(final R response, final TaskCallback.Success<R> successCallback) {
-        runOnUIThread(new Runnable() {
-            @Override
-            public void run() {
-                successCallback.onSuccess(response);
-            }
-        });
-    }
 
-    public static <R> void notifySuccessToUI(final R response, final TaskCallback.Callback<R> taskCallback) {
+    public static <R > void notifySuccessToUI(final R response, final TaskCallback.Callback<R> taskCallback) {
         runOnUIThread(new Runnable() {
             @Override
             public void run() {
@@ -214,13 +210,17 @@ public class TaskScheduler {
         });
     }
 
-    public static <R> void notifyErrorToUI(final ErrorBundle error, final TaskCallback.Callback<R> taskCallback) {
+    public static <R > void notifyErrorToUI(final ErrorBundle error, final TaskCallback.Callback<R> taskCallback) {
         runOnUIThread(new Runnable() {
             @Override
             public void run() {
                 taskCallback.onError(error);
             }
         });
+    }
+
+    public static boolean isMainThread() {
+        return Thread.currentThread()== sMainHandler.getLooper().getThread();
     }
 
     private static final ThreadFactory sTimeOutThreadFactory = new ThreadFactory() {
