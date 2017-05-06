@@ -91,8 +91,10 @@ public class TaskScheduler {
                     runOnUIThread(new Runnable() {
                         @Override
                         public void run() {
-                            timeOutTask.error(new ErrorBundle(e));
-                            timeOutTask.setCanceled(true);
+                            if(!timeOutTask.isCanceled()) {
+                                timeOutTask.error(new ErrorBundle(e));
+                                timeOutTask.setCanceled(true);
+                            }
                         }
                     });
                 }
