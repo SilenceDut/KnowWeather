@@ -1,5 +1,9 @@
+
 # KnowWeather
 A concise and nice weather app 
+
+# 服务器已关闭，欠费待充值
+
 
 建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
 
@@ -21,14 +25,8 @@ A concise and nice weather app
  * 轮询系统定时更新天气
  * 简洁的界面
  * ...
-
-# TODO
- * 预警信息（接口已提供）
- * 升级接口，提供更多的信息（湿度等）
- * Thinker的接入
- * 微信小程序
  
- 问题交流QQ群：292976661
+
  
 # 天气接口使用声明
  
