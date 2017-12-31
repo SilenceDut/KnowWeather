@@ -41,8 +41,8 @@ public class ShareDialog {
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(lp);
         mDialog.setContentView(dialogView);
-        RecyclerView recyclerView = (RecyclerView) dialogView.findViewById(R.id.share_list);
-        mTitle = (TextView) dialogView.findViewById(R.id.share_title);
+        RecyclerView recyclerView =  dialogView.findViewById(R.id.share_list);
+        mTitle =  dialogView.findViewById(R.id.share_title);
         recyclerView.setLayoutManager(new GridLayoutManager(context, 4));
         mShareAdapter = new BaseRecyclerAdapter(context);
         recyclerView.setAdapter(mShareAdapter);

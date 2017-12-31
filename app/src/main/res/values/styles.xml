@@ -96,9 +96,9 @@
 
     <!-- 弹出框动画 由下至上 -->
     <style name="dialogStyle" parent="@android:style/Animation.Dialog">
-        <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
         <!-- 进入时的动画 -->
-        <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
         <!-- 退出时的动画 -->
     </style>
 
