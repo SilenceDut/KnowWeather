@@ -2,7 +2,9 @@
 # KnowWeather
 A concise and nice weather app 
 
-# 服务器已关闭，欠费待充值
+# 模块化重构进行中
+
+# 服务器已关闭，待充值
 
 
 建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
