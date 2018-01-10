@@ -4,6 +4,9 @@ A concise and nice weather app
 
 # 模块化重构进行中
 
+将会基于[谷歌最新的
+Android Architecture 架构](https://developer.android.com/topic/libraries/architecture/index.html)和[微信模块化架构](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286672&idx=1&sn=4d9db00c496fcafd1d3e01d69af083f9)
+
 # 服务器已关闭，待充值
 
 
