@@ -22,9 +22,11 @@ public class LocationImpl implements ILocationApi {
     private AMapLocationClient mLocationClient;
     private City mLocatedCity;
 
-    public LocationImpl() {
+    @Override
+    public void onCreate() {
         initLocation();
     }
+
 
     private void initLocation() {
 

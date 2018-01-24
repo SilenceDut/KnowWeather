@@ -15,6 +15,12 @@ import com.silencedut.weather_core.corebase.BaseFragment;
  */
 @HubInject(api = ISettingProvider.class)
 public class SettingProvider implements ISettingProvider {
+
+    @Override
+    public void onCreate() {
+
+    }
+
     @Override
     public void navigationAboutActivity(Context context) {
         AboutActivity.navigationActivity(context);

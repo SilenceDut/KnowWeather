@@ -23,6 +23,12 @@ import com.silencedut.weather_core.corebase.BaseFragment;
 public class CityProviderImpl implements ICityProvider {
 
     @Override
+    public void onCreate() {
+
+    }
+
+
+    @Override
     public City searchCity(String cityId) {
         return CoreManager.getImpl(ICityRepositoryApi.class).searchCity(cityId);
     }

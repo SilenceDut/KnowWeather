@@ -29,7 +29,8 @@ public class WeatherFetchImpl implements IFetchWeather {
     private NetWeatherApi mNetWeatherApi;
     private AtomicReference<String> mStringAtomicReference = new AtomicReference<>($);
 
-    public WeatherFetchImpl() {
+    @Override
+    public void onCreate() {
         mNetWeatherApi = AppHttpClient.getInstance().getService(NetWeatherApi.class);
     }
 

@@ -23,9 +23,10 @@ public class PermissionImpl implements IPermissionApi {
     private static final String TAG = "PermissionImpl";
     private static final int URGENT_PERMISSION = 0x01;
 
+    @Override
+    public void onCreate() {
 
-
-
+    }
 
     @TargetApi(Build.VERSION_CODES.M)
     public void initUrgentPermission(final BaseActivity activity) {
@@ -66,4 +67,6 @@ public class PermissionImpl implements IPermissionApi {
             }
         }
     }
+
+
 }

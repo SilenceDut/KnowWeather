@@ -22,6 +22,11 @@ import java.util.List;
 public class WeatherProviderImpl implements IWeatherProvider {
 
     @Override
+    public void onCreate() {
+
+    }
+
+    @Override
     public LiveData<StatusDataResource<WeatherData>> getWeatherData() {
 
         return WeatherRepository.getInstance().getWeatherObserver();
@@ -46,5 +51,6 @@ public class WeatherProviderImpl implements IWeatherProvider {
     public void startService(Context context, boolean allowPoll) {
         PollingUtils.startService(context,allowPoll);
     }
+
 
 }

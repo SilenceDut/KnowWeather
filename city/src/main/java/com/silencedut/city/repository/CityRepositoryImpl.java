@@ -36,12 +36,11 @@ public class CityRepositoryImpl implements ICityRepositoryApi {
     private Handler mCityHandler;
     private List<City> mAllCityData = new ArrayList<>();
 
-    public CityRepositoryImpl() {
+    @Override
+    public void onCreate() {
         mCityDatabase = DBHelper.provider(CityDatabase.class,CITY_DB_NAME);
         mCityHandler =  TaskScheduler.provideHandler(TAG);
-
     }
-
 
     @Override
     public void saveCurrentCityId(String cityId) {

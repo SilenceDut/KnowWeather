@@ -19,7 +19,6 @@ public class CoreManager {
 
     }
 
-
     public static Application getContext() {
         return sContext;
     }
@@ -32,6 +31,9 @@ public class CoreManager {
         return Hub.getImpl(api);
     }
 
+    /**
+     * 查询接口的实现类是否存在，除非特殊情况，一般不需要，直接调用{@link #getImpl}就行了
+     */
     public static <T extends BaseCoreApi> boolean implExist(Class<T> api) {
         return Hub.implExist(api);
     }
