@@ -26,7 +26,6 @@ public class AppConfig {
     private static final String APP_NAME = "knowweather";
     private static final String BUGLY_APPID = "d29f7bc148";
 
-
     public static void initialize(Application context) {
         initANRWatch(context);
         initCrashReport(context);

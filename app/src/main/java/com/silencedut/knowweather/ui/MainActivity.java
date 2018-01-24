@@ -191,7 +191,7 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     private void setupViewPager() {
         MainPageAdapter adapter = new MainPageAdapter(this, getSupportFragmentManager());
 
-        Pair<BaseFragment,Integer> cityFragmentPair = CoreManager.getImpl(ICityProvider.class).provideCityFragment();
+        Pair<BaseFragment, Integer> cityFragmentPair = CoreManager.getImpl(ICityProvider.class).provideCityFragment();
         adapter.addFrag(cityFragmentPair);
 
         BaseFragment weatherFragment = WeatherFragment.newInstance();

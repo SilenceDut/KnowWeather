@@ -4,7 +4,6 @@ import android.app.Application;
 
 import com.silencedut.hub.Hub;
 import com.silencedut.weather_core.api.BaseCoreApi;
-import com.silencedut.weather_core.api.cityprovider.ICityProvider;
 import com.silencedut.weather_core.appconfig.AppConfig;
 
 /**
@@ -33,5 +32,8 @@ public class CoreManager {
         return Hub.getImpl(api);
     }
 
+    public static <T extends BaseCoreApi> boolean implExist(Class<T> api) {
+        return Hub.implExist(api);
+    }
 
 }
