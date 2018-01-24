@@ -30,13 +30,13 @@ import com.silencedut.knowweather.ui.adapter.MainPageAdapter;
 import com.silencedut.taskscheduler.TaskScheduler;
 import com.silencedut.weather_core.CoreManager;
 import com.silencedut.weather_core.api.cityprovider.ICityProvider;
+import com.silencedut.weather_core.api.coreprovider.ICoreProvider;
 import com.silencedut.weather_core.api.settingprovider.ISettingProvider;
 import com.silencedut.weather_core.api.weatherprovider.WeatherData;
 import com.silencedut.weather_core.corebase.BaseActivity;
 import com.silencedut.weather_core.corebase.BaseFragment;
 import com.silencedut.weather_core.corebase.ResourceProvider;
 import com.silencedut.weather_core.corebase.StatusDataResource;
-import com.silencedut.weather_core.corebase.customview.ShareDialog;
 import com.silencedut.weather_core.permission.IPermissionApi;
 import com.silencedut.weather_core.viewmodel.ModelProvider;
 
@@ -103,7 +103,7 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
     private String mUpdateTime ="";
 
     private static final int MIN_REFRESH_MILLS = 2000;
-    private ShareDialog mShareDialog;
+
 
     @Override
     public void initBeforeView() {
@@ -150,8 +150,6 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
 
         mSucceedAnimator = ofFloat(mPostTimeTv, "scaleX", 1, 0, 1).setDuration(POSTTIME_DURATION);
         mSucceedAnimator.setStartDelay(ROTATION_DURATION);
-
-        mShareDialog = new ShareDialog(this);
 
 
     }
@@ -346,10 +344,10 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
         int id = item.getItemId();
         switch (id) {
             case R.id.share_weather:
-                mShareDialog.show(true);
+                CoreManager.getImpl(ICoreProvider.class).showShareDialog(this,true);
                 break;
             case R.id.share_app:
-                mShareDialog.show(false);
+                CoreManager.getImpl(ICoreProvider.class).showShareDialog(this,false);
                 break;
             case R.id.about:
                 CoreManager.getImpl(ISettingProvider.class).navigationAboutActivity(this);

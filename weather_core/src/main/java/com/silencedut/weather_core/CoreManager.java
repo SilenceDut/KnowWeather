@@ -3,7 +3,7 @@ package com.silencedut.weather_core;
 import android.app.Application;
 
 import com.silencedut.hub.Hub;
-import com.silencedut.weather_core.api.BaseCoreApi;
+import com.silencedut.weather_core.api.ICoreApi;
 import com.silencedut.weather_core.appconfig.AppConfig;
 
 /**
@@ -27,14 +27,14 @@ public class CoreManager {
         return 0;
     }
 
-    public static  <T extends BaseCoreApi> T getImpl(Class<T> api) {
+    public static  <T extends ICoreApi> T getImpl(Class<T> api) {
         return Hub.getImpl(api);
     }
 
     /**
      * 查询接口的实现类是否存在，除非特殊情况，一般不需要，直接调用{@link #getImpl}就行了
      */
-    public static <T extends BaseCoreApi> boolean implExist(Class<T> api) {
+    public static <T extends ICoreApi> boolean implExist(Class<T> api) {
         return Hub.implExist(api);
     }
 

@@ -9,6 +9,7 @@
     android:fitsSystemWindows="true"
     tools:context=".ui.MainActivity">
 
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
@@ -16,13 +17,13 @@
         android:fitsSystemWindows="true"
         app:elevation="0dp">
 
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             app:contentScrim="@android:color/transparent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
 
             <FrameLayout
                 android:id="@+id/main_bg"
@@ -79,6 +80,7 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
             android:layout_gravity="center"
@@ -92,7 +94,10 @@
             app:tabTextColor="@color/main_background"
             />
 
+
     </android.support.design.widget.AppBarLayout>
+
+
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
