@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="City_MaterialSearchView">
+        <attr name="city_searchBackground" format="integer" />
+        <attr name="city_searchVoiceIcon" format="integer" />
+        <attr name="city_searchCloseIcon" format="integer" />
+        <attr name="city_searchBackIcon" format="integer" />
+        <attr name="city_searchSuggestionIcon" format="integer" />
+        <attr name="city_searchSuggestionBackground" format="integer" />
+        <attr name="android:hint" />
+        <attr name="android:textColor" />
+        <attr name="android:textColorHint" />
+    </declare-styleable>
+</resources>

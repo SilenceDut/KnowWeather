@@ -1,0 +1,100 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="core_AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="toolbarNavigationButtonStyle">@style/core_ToolbarNavigationButtonStyle</item>
+
+    </style>
+
+    <style name="core_BaseAppTheme" parent="core_AppTheme">
+        <item name="android:textColor">@color/main_text_black</item>
+        <item name="actionOverflowButtonStyle">@style/core_OverflowButtonStyle</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@null</item>
+
+    </style>
+    
+    <style name="core_ToolbarNavigationButtonStyle" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:width">24dp</item>
+        <item name="android:height">24dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+
+    <style name="core_OverflowButtonStyle" >
+        <item name="android:src">@mipmap/core_info</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingLeft">12dp</item>
+
+    </style>
+
+    <style name="core_IconTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/core_IconTextAppearance</item>
+    </style>
+
+    <style name="core_IconTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="core_TextAppearance.RobotoThinPath" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Thin.ttf</item>
+    </style>
+    
+    <style name="core_CommonIconImage">
+        <item name="android:layout_width">@dimen/common_icon_size</item>
+        <item name="android:layout_height">@dimen/common_icon_size</item>
+    </style>
+
+    <style name="core_CommonIconImageSmall">
+        <item name="android:layout_width">@dimen/common_icon_size_small</item>
+        <item name="android:layout_height">@dimen/common_icon_size_small</item>
+    </style>
+
+    <style name="core_SettingTextStyle">
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/common_dimen_mid</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/setting_text_height</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:textColor">@color/main_text_black</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- 弹出框动画 由下至上 -->
+    <style name="core_dialogStyle" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/core_dialog_enter</item>
+        <!-- 进入时的动画 -->
+        <item name="android:windowExitAnimation">@anim/core_dialog_exit</item>
+        <!-- 退出时的动画 -->
+    </style>
+
+    <!-- 对话框样式 -->
+    <style name="core_BottomDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="core_AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/main_text_black</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/main_background</item>
+
+        <item name="android:textSize">@dimen/text_size_default</item>
+
+        <item name="windowMinWidthMajor">50%</item>
+        <item name="windowMinWidthMinor">50%</item>
+
+    </style>
+
+</resources>

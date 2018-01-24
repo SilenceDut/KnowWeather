@@ -5,6 +5,7 @@
       <w>apikey</w>
       <w>appid</w>
       <w>appkey</w>
+      <w>baselib</w>
       <w>bugly</w>
       <w>cdae</w>
       <w>ceedf</w>
@@ -19,8 +20,11 @@
       <w>gson</w>
       <w>hanzi</w>
       <w>iconids</w>
+      <w>impls</w>
       <w>inited</w>
+      <w>instnce</w>
       <w>knowweather</w>
+      <w>locateded</w>
       <w>mwevml</w>
       <w>noto</w>
       <w>pgyer</w>

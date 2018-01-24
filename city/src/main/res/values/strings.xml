@@ -1,0 +1,14 @@
+<resources >
+
+    <string name="city_guide_info">单击城市卡片选择默认城市,\n长按进行编辑</string>
+
+    <string name="city_select">选择城市</string>
+    <string name="city_hot">热门城市</string>
+    <string name="city_located">定位城市</string>
+    <string name="city_search">搜索城市</string>
+    <string name="city_hint_search_box">输入城市名或拼音</string>
+    <string name="city_nothing_found">没有搜索结果~</string>
+    <string name="city_locating">正在定位…</string>
+    <string name="city_located_failed">定位失败</string>
+
+</resources>

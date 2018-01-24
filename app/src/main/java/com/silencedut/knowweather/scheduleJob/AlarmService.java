@@ -5,17 +5,15 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.silencedut.knowweather.ModelManager;
-import com.silencedut.knowweather.model.WeatherModel;
 import com.silencedut.knowweather.remoteviews.RemoteViewsHelper;
-import com.silencedut.knowweather.weather.callbacks.WeatherCallBack;
 import com.silencedut.router.Router;
+import com.silencedut.weather_core.callback.EventCenter;
 
 /**
  * Created by SilenceDut on 2016/10/20 .
  */
 
-public class AlarmService extends Service implements WeatherCallBack.NotificationStatus {
+public class AlarmService extends Service implements EventCenter.NotificationStatus {
 
 
     @Override
@@ -26,7 +24,6 @@ public class AlarmService extends Service implements WeatherCallBack.Notificatio
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        ModelManager.getModel(WeatherModel.class).updateDefaultWeather();
         RemoteViewsHelper.showNotification(this);
         return super.onStartCommand(intent, flags, startId);
     }

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+            <FrameLayout
+                android:id="@+id/main_bg"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7"
+                >
+
+                <LinearLayout
+                    android:id="@+id/container_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="120dp"
+                    android:orientation="horizontal"
+                    app:layout_collapseMode="parallax"
+                    >
+
+                    <TextView
+                        android:id="@+id/main_temp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="--°"
+                        android:textAppearance="@style/core_TextAppearance.RobotoThinPath"
+                        android:textColor="@color/main_background"
+                        android:textSize="@dimen/text_size_main_special"
+                        />
+
+                    <TextView
+                        android:id="@+id/main_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/main_background"
+                        android:textSize="@dimen/text_size_appbar_title"
+                        />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/main_hours_forecast_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@color/disable_or_hint_white"
+                    />
+            </FrameLayout>
+
+            <!--only as a view holder-->
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbar_height"
+                />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/main_background"
+            app:tabIndicatorHeight="0dp"
+            app:tabMinWidth="80dp"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/core_IconTabLayout"
+            app:tabTextColor="@color/main_background"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            />
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/Theme.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ImageView
+            android:id="@+id/title_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@mipmap/core_weather_few_clouds"
+            android:scaleType="centerInside"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/title_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:textSize="@dimen/text_size_appbar_title"
+            android:textColor="@color/main_text_white"
+            android:text="28°"
+            android:layout_gravity="center_vertical"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/main_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawablePadding="@dimen/common_dimen_tiny"
+                android:gravity="center"
+                android:textColor="@color/main_background"
+                android:textSize="18sp"
+                />
+
+            <ImageView
+                android:id="@+id/refresh_status"
+                android:layout_width="@dimen/text_size_small"
+                android:layout_height="@dimen/text_size_small"
+                android:layout_below="@id/main_location"
+                android:layout_marginTop="@dimen/common_dimen_min"
+                android:src="@mipmap/weather_refresh"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/main_post_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/main_location"
+                android:layout_marginLeft="@dimen/common_dimen_min"
+                android:layout_toRightOf="@id/refresh_status"
+                android:text="@string/weather_refreshing"
+                android:textColor="@color/secondly_text_white"
+                android:textSize="@dimen/text_size_small"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/float_action"
+        android:layout_width="@dimen/toolbar_height"
+        android:layout_height="@dimen/toolbar_height"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/float_button_margin"
+        android:clickable="true"
+        android:src="@mipmap/weather_refresh"
+        app:rippleColor="@color/main_background"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

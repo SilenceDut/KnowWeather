@@ -1,0 +1,16 @@
+<resources>
+
+    <string name="weather_slogan">天气尽在"掌握"之中！</string>
+
+    <string name="weather_add_city_hand_mode">定位失败,请手动添加城市</string>
+
+    <string name="weather_refreshing">正在更新…</string>
+    <string name="weather_refresh_fail">更新失败!</string>
+    <string name="weather_refresh_succeed">更新成功!</string>
+
+    <string name="weather_post">%1$s发布</string>
+    <string name="weather_future_weather">未来天气</string>
+    <string name="weather_aqi_guide" translatable="false">空气质量指数(AQI)</string>
+    <string name="weather_lifeIndexes">生活指数</string>
+
+</resources>

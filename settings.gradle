@@ -1,3 +1,4 @@
+include ':setting'
 def initLocalGradleEnvironment() {
 
     Properties properties = new Properties()
@@ -13,15 +14,43 @@ def initLocalGradleEnvironment() {
 }
 
 def initVersion() {
+    // be in common use
     gradle.ext.compileSdkVersion = 27
     gradle.ext.minSdkVersion = 14
-    gradle.ext.supportVersion = '27.0.1'
+    gradle.ext.supportVersion = '27.0.2'
     gradle.ext.versionCode = 16
     gradle.ext.versionName = '1.2.2'
 
+
+    //app.gradle dependencies
+
+    //weather_core dependencies
+    gradle.ext.room_compiler = '1.0.0'
+    gradle.ext.hub = '1.0.5'
+    gradle.ext.permissionTool = '2.3.1'
+
+    //baselib.gradle dependencies
+    gradle.ext.calligraphy = '2.2.0'
+    gradle.ext.butterknife = '8.8.1'
+    gradle.ext.gson = '2.8.1'
+    gradle.ext.retrofit2 ='2.1.0'
+    gradle.ext.tinypinyin = '1.0.0'
+    gradle.ext.stetho ='1.5.0'
+    gradle.ext.leakcanary ='1.5.4'
+    gradle.ext.bugly_crashreport_upgrade ='1.3.4'
+    gradle.ext.silencedut_router ='1.3.0'
+    gradle.ext.silencedut_router_compiler = '1.0.1'
+    gradle.ext.taskscheduler = '1.0.3'
+    gradle.ext.expandableLayout ='1.2.0'
+    gradle.ext.lifecycle_extensions = '1.0.0'
+    gradle.ext.lifecycle_compiler = '1.0.0'
+    gradle.ext.room_runtime ='1.0.0'
+
 }
 //初始化
+
+
 initLocalGradleEnvironment()
 initVersion()
 
-include ':app'
+include 'app','baselib', 'weather_core', ':city'

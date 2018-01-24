@@ -17,15 +17,14 @@ import android.os.SystemClock;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
 
-import com.silencedut.knowweather.MainActivity;
-import com.silencedut.knowweather.ModelManager;
+import com.silencedut.baselib.commonhelper.persistence.PreferencesHelper;
+import com.silencedut.baselib.commonhelper.utils.TimeUtil;
 import com.silencedut.knowweather.R;
-import com.silencedut.knowweather.common.Constants;
-import com.silencedut.knowweather.model.WeatherModel;
-import com.silencedut.knowweather.repository.PreferencesUtil;
-import com.silencedut.knowweather.utils.TimeUtil;
-import com.silencedut.knowweather.utils.Version;
-import com.silencedut.knowweather.weather.entity.WeatherEntity;
+import com.silencedut.knowweather.repository.WeatherRepository;
+import com.silencedut.knowweather.ui.MainActivity;
+import com.silencedut.weather_core.Version;
+import com.silencedut.weather_core.api.weatherprovider.WeatherData;
+import com.silencedut.weather_core.corebase.ResourceProvider;
 
 import java.lang.reflect.Field;
 
@@ -37,7 +36,15 @@ public class RemoteViewsHelper {
 
 
     public static void showNotification(Service service) {
-        boolean show = PreferencesUtil.get(Constants.NOTIFICATION_ALLOW, true);
+
+        WeatherData weatherData = WeatherRepository.getInstance().getCachedWeatherData();
+
+        if(weatherData == null) {
+            return;
+        }
+
+
+        boolean show = PreferencesHelper.get(ResourceProvider.NOTIFICATION_ALLOW, true);
         if (!show) {
             return;
         }
@@ -47,7 +54,15 @@ public class RemoteViewsHelper {
     }
 
     public static void updateNotification(Service service) {
-        boolean show = PreferencesUtil.get(Constants.NOTIFICATION_ALLOW, true);
+
+        WeatherData weatherData = WeatherRepository.getInstance().getCachedWeatherData();
+
+        if(weatherData == null) {
+            return;
+        }
+
+
+        boolean show = PreferencesHelper.get(ResourceProvider.NOTIFICATION_ALLOW, true);
         if (!show||service==null) {
             return;
         }
@@ -84,22 +99,20 @@ public class RemoteViewsHelper {
     }
 
     @TargetApi(16)
-    public static void generateAlarmNotification(Context context) {
+    private static void generateAlarmNotification(Context context) {
 
-        if (!(PreferencesUtil.get(Constants.ALARM_ALLOW, true) && PreferencesUtil.get(Constants.NOTIFICATION_ALLOW, true))) {
+        if (!(PreferencesHelper.get(ResourceProvider.ALARM_ALLOW, true) && PreferencesHelper.get(ResourceProvider.NOTIFICATION_ALLOW, true))) {
+            return;
+        }
+        WeatherData weatherData = WeatherRepository.getInstance().getCachedWeatherData();
+
+        if (weatherData == null || weatherData.getAlarms() == null || weatherData.getAlarms().size() == 0) {
             return;
         }
 
-        WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
+        WeatherData.AlarmsEntity alarmsEntity = weatherData.getAlarms().get(0);
 
-
-        if (weatherEntity == null || weatherEntity.getAlarms() == null || weatherEntity.getAlarms().size() == 0) {
-            return;
-        }
-
-        WeatherEntity.AlarmsEntity alarmsEntity = weatherEntity.getAlarms().get(0);
-
-        Notification notification = new NotificationCompat.Builder(context).setOngoing(false).setPriority(NotificationCompat.PRIORITY_MAX).setContentTitle(alarmsEntity.getAlarmTypeDesc()).setContentText(alarmsEntity.getAlarmDesc()).setSmallIcon(R.mipmap.icon).build();
+        Notification notification = new NotificationCompat.Builder(context).setOngoing(false).setPriority(NotificationCompat.PRIORITY_MAX).setContentTitle(alarmsEntity.getAlarmTypeDesc()).setContentText(alarmsEntity.getAlarmDesc()).setSmallIcon(R.mipmap.core_icon).build();
 
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         manager.notify(NOTICE_ID_TYPE_ALARM, notification);
@@ -116,9 +129,9 @@ public class RemoteViewsHelper {
                 .setPriority(NotificationCompat.PRIORITY_MAX).setOngoing(true);
 
         if (Version.buildVersion() >= Build.VERSION_CODES.LOLLIPOP) {
-            builder.setSmallIcon(R.mipmap.small_icon);
+            builder.setSmallIcon(R.mipmap.weather_small_icon);
         } else {
-            builder.setSmallIcon(R.mipmap.icon);
+            builder.setSmallIcon(R.mipmap.core_icon);
         }
 
 
@@ -134,8 +147,10 @@ public class RemoteViewsHelper {
     }
 
     private static RemoteViews getNotificationContentView(Context context) {
-        WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
-        int themeId = Constants.getNotificationThemeId(PreferencesUtil.get(Constants.NOTIFICATION_THEME, 1));
+
+
+
+        int themeId = ResourceProvider.getNotificationThemeId(PreferencesHelper.get(ResourceProvider.NOTIFICATION_THEME, 1));
 
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), themeId);
 
@@ -144,16 +159,19 @@ public class RemoteViewsHelper {
         PendingIntent contentIntent = PendingIntent.getActivity(context, (int) SystemClock.uptimeMillis(), intent, PendingIntent.FLAG_UPDATE_CURRENT);
         remoteViews.setOnClickPendingIntent(R.id.notification_container, contentIntent);
 
-        if (weatherEntity == null) {
+        WeatherData weatherData = WeatherRepository.getInstance().getCachedWeatherData();
+
+        if(weatherData == null) {
             return remoteViews;
         }
 
-        WeatherEntity.BasicEntity basic = weatherEntity.getBasic();
+
+        WeatherData.BasicEntity basic = weatherData.getBasic();
         remoteViews.setTextViewText(R.id.weather_temp, basic.getTemp());
         remoteViews.setTextViewText(R.id.weather_status, basic.getWeather());
         remoteViews.setTextViewText(R.id.city, basic.getCity());
         remoteViews.setTextViewText(R.id.post_time, TimeUtil.getHourMinute() + " 更新");
-        remoteViews.setImageViewResource(R.id.weather_icon, Constants.getIconId(basic.getWeather()));
+        remoteViews.setImageViewResource(R.id.weather_icon, ResourceProvider.getIconId(basic.getWeather()));
 
 
         Intent updateIntent = new Intent(WeatherWidgetProvider.UPDATE_ACTION);

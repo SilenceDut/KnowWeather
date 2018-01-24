@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import com.silencedut.knowweather.common.Constants;
-import com.silencedut.knowweather.repository.PreferencesUtil;
-import com.silencedut.knowweather.utils.Version;
+import com.silencedut.baselib.commonhelper.persistence.PreferencesHelper;
+import com.silencedut.weather_core.Version;
+import com.silencedut.weather_core.corebase.ResourceProvider;
 
 /**
  * Created by SilenceDut on 2016/10/23 .
@@ -27,7 +27,7 @@ public class PollingUtils {
     //开启轮询
     private static void startPolling(Context context) {
         Scheduler scheduler;
-        long seconds = Constants.getSchedule(PreferencesUtil.get(Constants.POLLING_TIME, 0));
+        long seconds = ResourceProvider.getSchedule(PreferencesHelper.get(ResourceProvider.POLLING_TIME, 0));
         if (Version.buildVersion() > Build.VERSION_CODES.LOLLIPOP) {
             scheduler = new JobWork();
             scheduler.startPolling(context, seconds, JobSchedulerService.class, JobSchedulerService.class.getSimpleName());

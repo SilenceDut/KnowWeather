@@ -3,17 +3,19 @@ package com.silencedut.knowweather.remoteviews;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.arch.lifecycle.LiveData;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import com.silencedut.knowweather.ModelManager;
 import com.silencedut.knowweather.R;
-import com.silencedut.knowweather.SplashActivity;
-import com.silencedut.knowweather.common.Constants;
-import com.silencedut.knowweather.model.WeatherModel;
-import com.silencedut.knowweather.weather.entity.WeatherEntity;
+import com.silencedut.knowweather.ui.SplashActivity;
+import com.silencedut.weather_core.CoreManager;
+import com.silencedut.weather_core.api.weatherprovider.IWeatherProvider;
+import com.silencedut.weather_core.api.weatherprovider.WeatherData;
+import com.silencedut.weather_core.corebase.ResourceProvider;
+import com.silencedut.weather_core.corebase.StatusDataResource;
 
 /**
  * Created by SilenceDut on 2016/11/10 .
@@ -43,19 +45,27 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         updateWidget(context,appWidgetManager);
     }
-    private void updateWidget(Context context,AppWidgetManager appWidgetManager) {
-        WeatherEntity weatherEntity = ModelManager.getModel(WeatherModel.class).getCachedWeather();
-        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
 
-        if (weatherEntity == null) {
+    private void updateWidget(Context context,AppWidgetManager appWidgetManager) {
+
+
+        WeatherData weatherData = null;
+        LiveData<StatusDataResource<WeatherData>> liveWeatherData = CoreManager.getImpl(IWeatherProvider.class).getWeatherData();
+        if(liveWeatherData.getValue() !=null && liveWeatherData.getValue().isSucceed()) {
+             weatherData = liveWeatherData.getValue().data;
+        }
+
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.weather_widget_layout);
+
+        if (weatherData == null) {
             return;
         }
 
-        WeatherEntity.BasicEntity basic = weatherEntity.getBasic();
+        WeatherData.BasicEntity basic = weatherData.getBasic();
         remoteViews.setTextViewText(R.id.temp,basic.getTemp());
         remoteViews.setTextViewText(R.id.weather_status, basic.getWeather());
         remoteViews.setTextViewText(R.id.city, basic.getCity());
-        remoteViews.setImageViewResource(R.id.status_icon, Constants.getIconId(basic.getWeather()));
+        remoteViews.setImageViewResource(R.id.status_icon, ResourceProvider.getIconId(basic.getWeather()));
 
         Intent newTaskIntent = new Intent(context, SplashActivity.class);
         newTaskIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

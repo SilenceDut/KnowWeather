@@ -1,0 +1,21 @@
+<resources>
+    <string name="notification">通知</string>
+    <string name="notification_show">显示通知栏</string>
+    <string name="notification_theme">通知栏皮肤</string>
+    <string name="follow_system_warn">在一些系统上，跟随系统色或许会出现显示问题</string>
+    <string name="alarm_allow">气象灾害预警</string>
+    <string name="update_allow">自动更新天气</string>
+    <string name="update_schedule">0.5小时</string>
+
+
+
+    <string name="about">关于</string>
+    <string name="contact">联系</string>
+    <string name="update_app">检查更新</string>
+
+    <string name="thanks">感谢你的支持</string>
+
+    <string name="explain">为保证『知天气』的简洁，未加入任何广告，你可以通过微信付款来支持开发者继续优化应用，
+        金额大小根据你的心情。\n\n可以用微信直接扫描二维码，也可以长按二维码分享给自己，然后识别二维码支付。\n\n感谢你的支持！</string>
+
+</resources>

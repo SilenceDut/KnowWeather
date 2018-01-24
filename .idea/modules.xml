@@ -4,6 +4,10 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/KnowWeather.iml" filepath="$PROJECT_DIR$/KnowWeather.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baselib/baselib.iml" filepath="$PROJECT_DIR$/baselib/baselib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/city/city.iml" filepath="$PROJECT_DIR$/city/city.iml" />
+      <module fileurl="file://$PROJECT_DIR$/setting/setting.iml" filepath="$PROJECT_DIR$/setting/setting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weather_core/weather_core.iml" filepath="$PROJECT_DIR$/weather_core/weather_core.iml" />
     </modules>
   </component>
 </project>

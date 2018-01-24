@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">知天气</string>
+
+    <string name="core_share_success">分享成功</string>
+    <string name="core_share_fail">抱歉,分享失败</string>
+    <string name="core_share_weather">分享天气</string>
+    <string name="core_share_app">分享应用</string>
+
+
+    <string name="core_known">我知道了</string>
+    <string name="core_tip_not_show">不再提示</string>
+
+    <string name="core_follow_system">跟随系统</string>
+    <string name="core_pure_white">优雅纯白</string>
+
+    <string name="core_ok">确定</string>
+    <string name="core_cancel">取消</string>
+
+
+
+</resources>

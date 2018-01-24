@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="city_LetterIndexTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">@dimen/side_letter_bar_width</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="city_MSV_ImageButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:paddingLeft">@dimen/search_icon_padding</item>
+        <item name="android:paddingRight">@dimen/search_icon_padding</item>
+    </style>
+
+</resources>

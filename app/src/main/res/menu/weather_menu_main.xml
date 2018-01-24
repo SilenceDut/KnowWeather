@@ -1,0 +1,19 @@
+<!--menu_main.xml-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MainActivity">
+
+    <item
+        android:id="@+id/share_weather"
+        android:title="@string/core_share_weather"
+        />
+    <item
+        android:id="@+id/share_app"
+        android:title="@string/core_share_app"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"
+        />
+
+</menu>

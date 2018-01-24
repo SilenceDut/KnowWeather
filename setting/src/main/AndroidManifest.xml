@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.silencedut.setting">
+    <application>
+        <activity
+            android:name=".ui.AboutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ui.ContactActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".ui.PayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+    </application>
+
+</manifest>

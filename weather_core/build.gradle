@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+
+    compileSdkVersion gradle.compileSdkVersion
+
+    defaultConfig {
+
+        minSdkVersion gradle.minSdkVersion
+        targetSdkVersion gradle.compileSdkVersion
+        versionCode gradle.versionCode
+        versionName gradle.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+
+        resourcePrefix "core"
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':baselib')
+
+
+
+    api "com.github.SilenceDut.Hub:hub:$gradle.hub"
+
+    annotationProcessor "com.github.SilenceDut.Hub:hub-compiler:$gradle.hub"
+
+    annotationProcessor "android.arch.persistence.room:compiler:$gradle.room_compiler"
+
+    annotationProcessor "com.jakewharton:butterknife-compiler:$gradle.butterknife"
+
+    api "com.github.hotchemi:permissionsdispatcher:$gradle.permissionTool"
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:$gradle.permissionTool"
+}
