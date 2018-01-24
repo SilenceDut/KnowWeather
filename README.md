@@ -1,30 +1,23 @@
 
 # KnowWeather
-A concise and nice weather app 
-
-# 模块化重构进行中
-
-将会基于[谷歌最新的
-Android Architecture 架构](https://developer.android.com/topic/libraries/architecture/index.html)和[微信模块化架构](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286672&idx=1&sn=4d9db00c496fcafd1d3e01d69af083f9)
-
-# 服务器已关闭，待充值
+美观、实用的天气app,基于谷歌最新的
+[Android Architecture Components](https://developer.android.com/topic/libraries/architecture/index.html)架构和[微信Android模块化架构重构实践](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286672&idx=1&sn=4d9db00c496fcafd1d3e01d69af083f9)对项目进行了重构
 
 
-建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O~~。
+建议先下载应用[**knowweather.apk**](https://github.com/SilenceDut/KnowWeather/blob/master/apk/knowweather.apk?raw=true) 体验下，以免浪费你的时间O(∩_∩)O。
 
 # 效果图
 ![](http://ww2.sinaimg.cn/large/006y8lVagw1faiecmxxx2j312w0dwtci.jpg)
 
 # 整体框架
 
-[根据实际项目浅谈Android项目中的框架搭建](https://silencedut.github.io/2016/12/05/根据实际项目浅谈Android项目中的框架搭建/)
+todo
 
-![](http://ww1.sinaimg.cn/large/006y8lVagw1fapabmcpijj30u00i3go3.jpg)
 
-# 关于
-[知天气——天气尽在掌握之中](https://silencedut.github.io/2016/12/06/知天气——天气尽在掌握之中/)
 
 # 特点
+ * 多moudle架构的实践
+ * Android Architecture Components 实践
  * 支持县级、区级天气
  * JobScheduler与JobService的使用
  * 轮询系统定时更新天气
@@ -35,7 +28,7 @@ Android Architecture 架构](https://developer.android.com/topic/libraries/archi
  
 # 天气接口使用声明
  
- 现在这个天气的接口由我在维护，如果你的应用使用了此接口，请指明出处，如果使用上线作品，请提前与我联系，否则因为服务器问题对你的应用造成影响概不负责。
+现在这个天气的接口用的是和风天气的免费接口，key值也没做
  
 
 # License
