@@ -15,7 +15,9 @@ def initLocalGradleEnvironment() {
 
 def initVersion() {
     // be in common use
+
     gradle.ext.compileSdkVersion = 27
+    gradle.ext.targetVersion =27
     gradle.ext.minSdkVersion = 14
     gradle.ext.supportVersion = '27.0.2'
     gradle.ext.versionCode = 16
@@ -26,8 +28,8 @@ def initVersion() {
 
     //weather_core dependencies
     gradle.ext.room_compiler = '1.0.0'
-    gradle.ext.hub = '1.1.0'
-    gradle.ext.permissionTool = '2.3.1'
+    gradle.ext.hub = '1.2.0'
+
 
     //baselib.gradle dependencies
     gradle.ext.calligraphy = '2.2.0'
@@ -42,8 +44,8 @@ def initVersion() {
     gradle.ext.silencedut_router_compiler = '1.0.1'
     gradle.ext.taskscheduler = '1.0.3'
     gradle.ext.expandableLayout ='1.2.0'
-    gradle.ext.lifecycle_extensions = '1.0.0'
-    gradle.ext.lifecycle_compiler = '1.0.0'
+    gradle.ext.lifecycle_extensions = '1.1.0'
+    gradle.ext.lifecycle_compiler = '1.1.0'
     gradle.ext.room_runtime ='1.0.0'
 
 }

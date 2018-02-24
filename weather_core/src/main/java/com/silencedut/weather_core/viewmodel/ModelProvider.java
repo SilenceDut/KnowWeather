@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
 /**
- * 原则上所有的ViewModel在此获取，便于方便管理
+ * 所有的ViewModel在此获取，便于方便管理
  *
  * Created by SilenceDut on 2018/1/6 .
  */

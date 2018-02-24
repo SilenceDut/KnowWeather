@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.silencedut.knowweather"
         minSdkVersion gradle.minSdkVersion
-        targetSdkVersion gradle.compileSdkVersion
+        targetSdkVersion gradle.targetVersion
         versionCode gradle.versionCode
         versionName gradle.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -57,4 +57,7 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:$gradle.butterknife"
     annotationProcessor "com.github.SilenceDut.Hub:hub-compiler:$gradle.hub"
     annotationProcessor "android.arch.persistence.room:compiler:$gradle.room_compiler"
+    annotationProcessor "android.arch.lifecycle:compiler:$gradle.lifecycle_compiler"
+
+
 }

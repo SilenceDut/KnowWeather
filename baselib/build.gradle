@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion gradle.minSdkVersion
-        targetSdkVersion gradle.compileSdkVersion
+        targetSdkVersion gradle.targetVersion
         versionCode 1
         versionName "1.0"
 
@@ -27,13 +27,12 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testApi 'junit:junit:4.12'
-    androidTestApi 'com.android.support.test:runner:1.0.1'
+
     androidTestApi 'com.android.support.test.espresso:espresso-core:3.0.1'
 
     // api library , can be used in import module
     api "com.android.support:appcompat-v7:$gradle.supportVersion"
     api "com.android.support:design:$gradle.supportVersion"
-    api "com.android.support:cardview-v7:$gradle.supportVersion"
 
     api ("com.jakewharton:butterknife:$gradle.butterknife")
 
@@ -56,7 +55,7 @@ dependencies {
 
     // ViewModel and LiveData
     api "android.arch.lifecycle:extensions:$gradle.lifecycle_extensions"
-    annotationProcessor "android.arch.lifecycle:compiler:$gradle.lifecycle_compiler"
+
 
     // Room
     api "android.arch.persistence.room:runtime:$gradle.room_runtime"
