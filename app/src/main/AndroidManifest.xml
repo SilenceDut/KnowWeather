@@ -55,7 +55,7 @@
         <receiver android:name=".remoteviews.WeatherWidgetProvider">
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/appwidget_provider_info"/>
+                android:resource="@xml/weather_widget_provider_info"/>
             <intent-filter>
                 <action android:name="main_activity_update_ui"/>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
