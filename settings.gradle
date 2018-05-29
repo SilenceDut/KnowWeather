@@ -28,21 +28,21 @@ def initVersion() {
 
     //weather_core dependencies
     gradle.ext.room_compiler = '1.0.0'
-    gradle.ext.hub = '1.2.0'
+    gradle.ext.hub = '1.6.6'
 
 
     //baselib.gradle dependencies
     gradle.ext.calligraphy = '2.2.0'
     gradle.ext.butterknife = '8.8.1'
     gradle.ext.gson = '2.8.1'
-    gradle.ext.retrofit2 ='2.1.0'
+    gradle.ext.retrofit2 ='2.3.0'
     gradle.ext.tinypinyin = '1.0.0'
     gradle.ext.stetho ='1.5.0'
     gradle.ext.leakcanary ='1.5.4'
     gradle.ext.bugly_crashreport_upgrade ='1.3.4'
     gradle.ext.silencedut_router ='1.3.0'
     gradle.ext.silencedut_router_compiler = '1.0.1'
-    gradle.ext.taskscheduler = '1.0.3'
+    gradle.ext.taskscheduler = '1.2.5'
     gradle.ext.expandableLayout ='1.2.0'
     gradle.ext.lifecycle_extensions = '1.1.0'
     gradle.ext.lifecycle_compiler = '1.1.0'

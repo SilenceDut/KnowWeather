@@ -2,8 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.antfortune.freeline'
 
 android {
-    compileSdkVersion gradle.compileSdkVersion
-
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.silencedut.knowweather"
         minSdkVersion gradle.minSdkVersion
@@ -26,14 +25,12 @@ android {
         resourcePrefix "weather"
 
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             output.outputFileName = new File(
@@ -41,23 +38,19 @@ android {
                     "knowweather.apk".toLowerCase())
         }
     }
+    buildToolsVersion '27.0.3'
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     testImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     implementation project(':weather_core')
     implementation project(':city')
     implementation project(':setting')
-
     annotationProcessor "com.jakewharton:butterknife-compiler:$gradle.butterknife"
     annotationProcessor "com.github.SilenceDut.Hub:hub-compiler:$gradle.hub"
     annotationProcessor "android.arch.persistence.room:compiler:$gradle.room_compiler"
     annotationProcessor "android.arch.lifecycle:compiler:$gradle.lifecycle_compiler"
-
-
 }
