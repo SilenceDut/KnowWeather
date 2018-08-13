@@ -1,6 +1,5 @@
 package com.silencedut.city.provider;
 
-import android.content.Context;
 import android.os.Handler;
 import android.support.annotation.WorkerThread;
 import android.support.v4.util.Pair;
@@ -8,7 +7,6 @@ import android.support.v4.util.Pair;
 import com.silencedut.city.R;
 import com.silencedut.city.repository.ICityRepositoryApi;
 import com.silencedut.city.ui.CityFragment;
-import com.silencedut.city.ui.search.SearchActivity;
 import com.silencedut.hub_annotation.HubInject;
 import com.silencedut.weather_core.CoreManager;
 import com.silencedut.weather_core.api.cityprovider.City;
@@ -45,10 +43,6 @@ public class CityProviderImpl implements ICityProvider {
         return CoreManager.getImpl(ICityRepositoryApi.class).getCityWorkHandler();
     }
 
-    @Override
-    public void navigationSearchActivity(Context context) {
-        SearchActivity.navigationActivity(context);
-    }
 
     @Override
     public void saveCurrentCityId(String cityId) {

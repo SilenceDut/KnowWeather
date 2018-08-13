@@ -25,6 +25,8 @@ import com.silencedut.city.ui.adapter.CityHolder;
 import com.silencedut.city.ui.adapter.CityInfoData;
 import com.silencedut.city.ui.adapter.HeaderData;
 import com.silencedut.city.ui.adapter.HeaderHolder;
+import com.silencedut.hub_annotation.HubActivity;
+import com.silencedut.weather_core.api.IActivityRouter;
 import com.silencedut.weather_core.corebase.BaseActivity;
 import com.silencedut.weather_core.corebase.customview.SideLetterBar;
 import com.silencedut.weather_core.viewmodel.ModelProvider;
@@ -43,6 +45,7 @@ import static android.view.View.VISIBLE;
  * Created by SilenceDut on 16/10/19.
  */
 
+@HubActivity(activityApi = IActivityRouter.class,methodName = "toSearchActivity")
 public class SearchActivity extends BaseActivity  {
 
     @BindView(R2.id.hot_city_list)
@@ -64,10 +67,6 @@ public class SearchActivity extends BaseActivity  {
 
     private BaseRecyclerAdapter mSearchResultAdapter;
 
-    public static void navigationActivity(Context from) {
-        Intent intent = new Intent(from, SearchActivity.class);
-        from.startActivity(intent);
-    }
 
     public static void navigationFromApplication(Context from) {
         Intent intent = new Intent(from, SearchActivity.class);

@@ -1,7 +1,6 @@
 package com.silencedut.setting.ui;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.Toolbar;
@@ -11,9 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.silencedut.baselib.commonhelper.log.LogHelper;
+import com.silencedut.hub_annotation.HubActivity;
 import com.silencedut.setting.R;
 import com.silencedut.setting.R2;
 import com.silencedut.weather_core.Version;
+import com.silencedut.weather_core.api.IActivityRouter;
 import com.silencedut.weather_core.corebase.BaseActivity;
 import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
@@ -25,6 +26,7 @@ import butterknife.OnClick;
  * Created by SilenceDut on 2016/11/18 .
  */
 
+@HubActivity(activityApi = IActivityRouter.class,methodName = "toAboutActivity")
 public class AboutActivity extends BaseActivity {
     @BindView(R2.id.title)
     Toolbar mTitle;
@@ -40,11 +42,6 @@ public class AboutActivity extends BaseActivity {
     TextView mNewVersion;
     @BindView(R2.id.new_version_tip)
     ImageView mNewVersionTip;
-
-    public static void navigationActivity(Context from) {
-        Intent intent = new Intent(from, AboutActivity.class);
-        from.startActivity(intent);
-    }
 
     @Override
     public int getContentViewId() {

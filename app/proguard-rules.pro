@@ -15,3 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+#------------------hub库-----------------------------
+-keep class * implements com.silencedut.hub_annotation.IFindImplClz {*;}
+-keep class * implements com.silencedut.hub_annotation.IFindActivity {*;}
+-keepnames interface * extends com.silencedut.hub.IHub
+-keepnames interface * extends com.silencedut.hub.IHubActivity

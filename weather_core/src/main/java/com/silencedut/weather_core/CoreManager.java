@@ -3,6 +3,7 @@ package com.silencedut.weather_core;
 import android.app.Application;
 
 import com.silencedut.hub.Hub;
+import com.silencedut.hub.IHubActivity;
 import com.silencedut.weather_core.api.ICoreApi;
 import com.silencedut.weather_core.appconfig.AppConfig;
 
@@ -29,6 +30,10 @@ public class CoreManager {
 
     public static  <T extends ICoreApi> T getImpl(Class<T> api) {
         return Hub.getImpl(api);
+    }
+
+    public static  <T extends IHubActivity> T getActivityRouter(Class<T> api) {
+        return Hub.getActivity(api);
     }
 
     /**

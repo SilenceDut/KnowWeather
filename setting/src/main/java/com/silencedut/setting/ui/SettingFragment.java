@@ -13,6 +13,7 @@ import com.silencedut.router.Router;
 import com.silencedut.setting.R;
 import com.silencedut.setting.R2;
 import com.silencedut.weather_core.CoreManager;
+import com.silencedut.weather_core.api.IActivityRouter;
 import com.silencedut.weather_core.api.weatherprovider.IWeatherProvider;
 import com.silencedut.weather_core.callback.EventCenter;
 import com.silencedut.weather_core.corebase.BaseFragment;
@@ -125,8 +126,7 @@ public class SettingFragment extends BaseFragment {
             mScheduleDialog.show();
 
         } else if (i == R.id.about) {
-            AboutActivity.navigationActivity(getActivity());
-
+            CoreManager.getActivityRouter(IActivityRouter.class).toAboutActivity();
         }
     }
 

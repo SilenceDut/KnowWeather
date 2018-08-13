@@ -28,7 +28,7 @@ def initVersion() {
 
     //weather_core dependencies
     gradle.ext.room_compiler = '1.0.0'
-    gradle.ext.hub = '1.6.6'
+    gradle.ext.hub = '1.7.5_dev'
 
 
     //baselib.gradle dependencies

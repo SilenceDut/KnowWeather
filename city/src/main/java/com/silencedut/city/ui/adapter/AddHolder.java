@@ -8,7 +8,7 @@ import com.silencedut.baselib.commonhelper.adapter.BaseViewHolder;
 import com.silencedut.city.R;
 import com.silencedut.city.R2;
 import com.silencedut.weather_core.CoreManager;
-import com.silencedut.weather_core.api.cityprovider.ICityProvider;
+import com.silencedut.weather_core.api.IActivityRouter;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -39,6 +39,6 @@ public class AddHolder extends BaseViewHolder<AddData> {
 
     @OnClick(R2.id.image)
     public void onClick() {
-        CoreManager.getImpl(ICityProvider.class).navigationSearchActivity(getContext());
+        CoreManager.getActivityRouter(IActivityRouter.class).toSearchActivity();
     }
 }

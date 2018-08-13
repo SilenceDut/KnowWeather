@@ -29,6 +29,7 @@ import com.silencedut.knowweather.ui.adapter.HourWeatherHolder;
 import com.silencedut.knowweather.ui.adapter.MainPageAdapter;
 import com.silencedut.taskscheduler.TaskScheduler;
 import com.silencedut.weather_core.CoreManager;
+import com.silencedut.weather_core.api.IActivityRouter;
 import com.silencedut.weather_core.api.cityprovider.ICityProvider;
 import com.silencedut.weather_core.api.coreprovider.ICoreProvider;
 import com.silencedut.weather_core.api.settingprovider.ISettingProvider;
@@ -350,7 +351,7 @@ public class MainActivity extends BaseActivity implements AppBarLayout.OnOffsetC
                 CoreManager.getImpl(ICoreProvider.class).showShareDialog(this,false);
                 break;
             case R.id.about:
-                CoreManager.getImpl(ISettingProvider.class).navigationAboutActivity(this);
+                CoreManager.getActivityRouter(IActivityRouter.class).toAboutActivity();
                 break;
             default:
                 break;
