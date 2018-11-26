@@ -1,6 +1,6 @@
 
 # KnowWeather
-**[deprecated 目前外部接口已不可用，在未找到新的天气接口时废弃]**
+**[Deprecated 目前外部接口已不可用，在未找到新的天气接口时废弃]**
 
 **美观、实用的天气app,基于谷歌最新的**
 [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/index.html)架构和[微信Android模块化架构重构实践](https://mp.weixin.qq.com/s?__biz=MzAwNDY1ODY2OQ==&mid=2649286672&idx=1&sn=4d9db00c496fcafd1d3e01d69af083f9)对项目进行了重构
