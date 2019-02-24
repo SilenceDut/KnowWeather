@@ -48,7 +48,7 @@ dependencies {
     releaseApi "com.squareup.leakcanary:leakcanary-android-no-op:$gradle.leakcanary"
 
     api "com.tencent.bugly:crashreport_upgrade:$gradle.bugly_crashreport_upgrade"
-    api "com.github.SilenceDut:ExpandableLayout:$gradle.expandableLayout"
+    api "com.github.silencedut:ExpandableLayout:$gradle.expandableLayout"
     api "com.silencedut:router:$gradle.silencedut_router"
     annotationProcessor "com.silencedut:router-compiler:$gradle.silencedut_router_compiler"
 
